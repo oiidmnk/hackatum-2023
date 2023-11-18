@@ -52,8 +52,8 @@ func getRecipes(ctx *gin.Context) {
 	}
 	validRecipes := utils.FilterRecipesByTags(recipes, users[id])
 	slices.SortFunc(validRecipes, func(i, j *database.RecipeWithProperties) int {
-		sumPreferencesI := utils.SumPreferences(users[id].Preferences, i.Tags)
-		sumPreferencesJ := utils.SumPreferences(users[id].Preferences, j.Tags)
+		sumPreferencesI := utils.SumPreferences(users[id].Preferences, i.Tags) / len(i.Tags)
+		sumPreferencesJ := utils.SumPreferences(users[id].Preferences, j.Tags) / len(j.Tags)
 		if sumPreferencesI == sumPreferencesJ {
 			if i.Rating == j.Rating {
 				return 0
