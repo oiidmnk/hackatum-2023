@@ -1,4 +1,4 @@
-package properties
+package requirements
 
 const (
 	NUTFREE     = "Nut free"
@@ -15,7 +15,7 @@ const (
 	VEGAN       = "Vegan"
 	MILD        = "Mild"
 	ECOFRIENDLY = "Eco friendly"
-	NONE
+	NONE        = "None"
 )
 
 func GetHardRequirements() []string {

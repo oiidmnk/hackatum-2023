@@ -41,7 +41,7 @@ func AssignIdIngredients(ingredients []*database.Ingredient) {
 	}
 }
 
-func ConvertRecipesToShortRecipes(recipes []*database.Recipe) []*database.RecipeShort {
+func ConvertRecipesToShortRecipes(recipes []*database.RecipeWithProperties) []*database.RecipeShort {
 	if len(recipes) == 0 {
 		return nil
 	}
