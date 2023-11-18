@@ -64,7 +64,7 @@ func ingredientsToProperties(ingredientNames []string, allIngredients []*databas
 	}
 	for _, ingredientName := range ingredientNames {
 		if !slices.ContainsFunc(allIngredients, func(ingredient *database.Ingredient) bool {
-			return ingredient.Name == ingredientName
+			return strings.Trim(strings.ToLower(ingredientName), " \n\t") == strings.Trim(strings.ToLower(ingredient.Name), " \n\t")
 		}) {
 			log.Fatal(fmt.Sprintf("Ingredient %s not found", ingredientName))
 		}
