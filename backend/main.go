@@ -1,14 +1,16 @@
 package main
 
 import (
-	"backend/database"
-	"backend/utils"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"slices"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
+
+	"backend/database"
+	"backend/utils"
 )
 
 var (
@@ -39,6 +41,8 @@ func main() {
 	router.GET("/image/:path", getImage)
 	router.GET("/user/:id", getUser)
 	router.GET("/user", getNewUserId)
+	router.GET("/like/:recipeId/:userId", likeMeal)
+	router.GET("/dislike/:recipeId/:userId", dislikeMeal)
 	router.PUT("/user/:id/preferences", updateUserPreferences)
 	router.PUT("/user/:id/requirements", updateUserRequirements)
 	log.Fatal(router.Run(":8080"))
@@ -88,7 +92,15 @@ func getTags(ctx *gin.Context) {
 
 func getRecipe(ctx *gin.Context) {
 	id, _ := strconv.ParseInt(ctx.Param("id"), 10, 32)
-	ctx.JSON(http.StatusOK, recipes[id])
+	userId, _ := strconv.ParseInt(ctx.Param("userId"), 10, 32)
+	recipe := *recipes[id]
+	if _, ok := users[userId].DislikedMeals[uint32(id)]; ok {
+		recipe.Disliked = true
+	}
+	if _, ok := users[userId].LikedMeals[uint32(id)]; ok {
+		recipe.Liked = true
+	}
+	ctx.JSON(http.StatusOK, recipe)
 }
 
 func getUser(ctx *gin.Context) {
@@ -108,6 +120,30 @@ func getNewUserId(ctx *gin.Context) {
 		Preferences:      utils.CreatePreferences(nil, tags),
 	})
 	ctx.JSON(http.StatusOK, id)
+}
+
+func likeMeal(ctx *gin.Context) {
+	recipeId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
+	userId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
+	if _, ok := users[userId].LikedMeals[uint32(recipeId)]; !ok {
+		users[userId].LikedMeals[uint32(recipeId)] = struct{}{}
+		utils.AddPreferenceValue(users[userId], recipes[recipeId].Tags, 20)
+	} else {
+		delete(users[userId].LikedMeals, uint32(recipeId))
+		utils.AddPreferenceValue(users[userId], recipes[recipeId].Tags, -20)
+	}
+}
+
+func dislikeMeal(ctx *gin.Context) {
+	recipeId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
+	userId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
+	if _, ok := users[userId].DislikedMeals[uint32(recipeId)]; !ok {
+		users[userId].DislikedMeals[uint32(recipeId)] = struct{}{}
+		utils.AddPreferenceValue(users[userId], recipes[recipeId].Tags, -20)
+	} else {
+		delete(users[userId].DislikedMeals, uint32(recipeId))
+		utils.AddPreferenceValue(users[userId], recipes[recipeId].Tags, 20)
+	}
 }
 
 func updateUserPreferences(ctx *gin.Context) {

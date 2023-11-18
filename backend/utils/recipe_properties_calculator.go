@@ -1,12 +1,13 @@
 package utils
 
 import (
-	"backend/database"
-	"backend/database/tags"
 	"fmt"
 	"log"
 	"slices"
 	"strings"
+
+	"backend/database"
+	"backend/database/tags"
 )
 
 func RecipesToRecipesWithProperties(recipes []*database.Recipe, ingredients []*database.Ingredient) []*database.RecipeWithProperties {
@@ -117,8 +118,8 @@ func GetTags(recipes []*database.RecipeWithProperties) []string {
 	return keys
 }
 
-func ConvertPreferences(preferences map[string]bool) map[string]uint32 {
-	ret := make(map[string]uint32, 0)
+func ConvertPreferences(preferences map[string]bool) map[string]int {
+	ret := make(map[string]int)
 
 	for k, v := range preferences {
 		if v {
@@ -129,13 +130,13 @@ func ConvertPreferences(preferences map[string]bool) map[string]uint32 {
 	return ret
 }
 
-func UpdatePreferences(preferences map[string]uint32, user *database.User) {
+func UpdatePreferences(preferences map[string]int, user *database.User) {
 	for k, v := range preferences {
 		user.Preferences[k] *= v
 	}
 }
 
-func SumPreferences(preferences map[string]uint32, tags []string) int {
+func SumPreferences(preferences map[string]int, tags []string) int {
 	ret := 0
 	for _, tag := range tags {
 		ret += int(preferences[tag])
