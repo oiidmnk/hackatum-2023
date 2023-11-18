@@ -147,7 +147,7 @@
             >
               <div class="w-20 h-20">
                 <img
-                  :src="'localhost:8080/' + dish.Image"
+                  src=""
                   alt=""
                   class="w-full h-full object-cover"
                 />
@@ -256,37 +256,49 @@ export default {
       },
     };
   },
-  created() {
-    // check LocalStorage to see if there is a user set
-    if (!localStorage.getItem("userId")) {
-      // Call the user creation API if not
-      this.createUser();
+  async created() {
+  try {
+    // Check LocalStorage to see if there is a user set
+    if (!localStorage.getItem('userId')) {
+      // Wait for the user creation API call to complete before continuing
+      await this.createUser();
     } else {
+      this.userId = localStorage.getItem('userId'); // Directly use the value from localStorage
       this.showNewUserPopup = false;
-      this.userId = this.getUserId();
     }
-    this.getRecipes();
-    this.getTags();
-  },
+    // These methods will only be called after the above await (if present) is resolved
+    await this.getRecipes();
+    await this.getTags();
+  } catch (error) {
+    console.error('An error occurred during the creation process:', error);
+  }
+}
+,
   methods: {
     createUser() {
-      const apiUrl = "http://localhost:8080/user"; // Your API endpoint
+      // Wrap the fetch call in a Promise
+  return new Promise((resolve, reject) => {
+    const apiUrl = 'http://localhost:8080/user';
 
-      fetch(apiUrl)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          this.userId = data; // Set the dishes to the data received from the API
-          localStorage.setItem("userId", this.userId);
-          console.log("New user created with id: " + this.userId);
-        })
-        .catch((error) => {
-          console.error("There was a problem with the fetch operation:", error);
-        });
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.userId = data; // Assuming the response contains a userId field
+        localStorage.setItem("userId", this.userId);
+        console.log("New user created with id: " + this.userId);
+        resolve(this.userId); // Resolve the Promise with the userId
+      })
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+        reject(error); // Reject the Promise in case of an error
+      });
+  });
     },
     getUserId() {
       this.userId = localStorage.getItem("userId");
@@ -310,7 +322,7 @@ export default {
     },
     setHardRequirements(hardReqs) {
       const apiUrl =
-        "http://localhost:8080/user/:" + this.userId + "/requirements"; // Your API endpoint
+        "http://localhost:8080/user/" + this.userId + "/requirements"; // Your API endpoint
 
       fetch(apiUrl, {
         method: "PUT", // or 'PATCH' if you're only partially updating the resource
@@ -339,7 +351,7 @@ export default {
     },
     setPreferences(prefs) {
       const apiUrl =
-        "http://localhost:8080/user/:" + this.userId + "/preferences"; // Your API endpoint
+        "http://localhost:8080/user/" + this.userId + "/preferences"; // Your API endpoint
 
       fetch(apiUrl, {
         method: "PUT", // or 'PATCH' if you're only partially updating the resource
