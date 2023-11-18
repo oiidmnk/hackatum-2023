@@ -10,7 +10,6 @@
     "rating": 4,
     "tags": [
       "French",
-      "Vegetarian",
       "Stew",
       "Hearty"
     ],
@@ -37,7 +36,6 @@
     "tags": [
       "Indian",
       "Curry",
-      "Spicy",
       "Rich"
     ],
     "ingredients": [
@@ -65,7 +63,6 @@
     "tags": [
       "Mexican",
       "Street Food",
-      "Spicy",
       "Flavorful"
     ],
     "ingredients": [
@@ -90,8 +87,7 @@
     "rating": 5,
     "tags": [
       "italian",
-      "european",
-      "vegetarian"
+      "european"
     ],
     "ingredients": [
       "Pizza dough",
@@ -140,8 +136,6 @@
     "image": "image/roasted-vegetable-medley.jpg",
     "rating": 4,
     "tags": [
-      "vegetarian",
-      "vegan",
       "healthy",
       "roasted"
     ],
@@ -171,7 +165,6 @@
     "tags": [
       "indian",
       "asian",
-      "spicy",
       "comfort"
     ],
     "ingredients": [
@@ -257,8 +250,6 @@
     "image": "image/quinoa-black-bean-salad.jpg",
     "rating": 4,
     "tags": [
-      "vegetarian",
-      "vegan",
       "salad",
       "healthy"
     ],
@@ -317,7 +308,6 @@
     "rating": 4,
     "tags": [
       "italian",
-      "vegetarian",
       "baked"
     ],
     "ingredients": [
@@ -346,8 +336,7 @@
     "rating": 5,
     "tags": [
       "thai",
-      "asian",
-      "spicy"
+      "asian"
     ],
     "ingredients": [
       "Ground chicken",
@@ -372,7 +361,6 @@
     "image": "image/maple-glazed-carrots.jpg",
     "rating": 4,
     "tags": [
-      "vegetarian",
       "side dish",
       "sweet"
     ],
@@ -451,7 +439,6 @@
     "rating": 5,
     "tags": [
       "indian",
-      "spicy",
       "aromatic"
     ],
     "ingredients": [
@@ -484,7 +471,6 @@
     "image": "image/butternut-squash-soup.jpg",
     "rating": 4,
     "tags": [
-      "vegetarian",
       "soup",
       "autumn"
     ],
