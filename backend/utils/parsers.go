@@ -49,20 +49,19 @@ func ConvertRecipesToShortRecipes(recipes []*database.RecipeWithProperties) []*d
 	shortRecipes := make([]*database.RecipeShort, 0, len(recipes))
 	for _, recipe := range recipes {
 		shortRecipes = append(shortRecipes, &database.RecipeShort{
-			Id:     recipe.Id,
-			Name:   recipe.Name,
-			Image:  recipe.Image,
-			Rating: uint32(recipe.Rating),
-			Tags:   recipe.Tags,
+			Id:           recipe.Id,
+			Name:         recipe.Name,
+			Image:        recipe.Image,
+			Rating:       uint32(recipe.Rating),
+			Tags:         recipe.Tags,
+			CookingLevel: recipe.RecipeProperties.CookingLevel,
 		})
 	}
 	return shortRecipes
 }
 
-// gets a user, recipe list. filters recipe list to work with user
 func FilterRecipesByTags(recipes []*database.RecipeWithProperties, user *database.User) []*database.RecipeWithProperties {
-	filteredRecipes := make([]*database.RecipeWithProperties, len(recipes))
-	slices.DeleteFunc(filteredRecipes, func(rwp *database.RecipeWithProperties) bool {
+	return slices.DeleteFunc(recipes, func(rwp *database.RecipeWithProperties) bool {
 		ret := false
 		ret = ret || (!rwp.Properties.AlcoholFree && user.HardRequirements.AlcoholFree)
 		ret = ret || (!rwp.Properties.EcoFriendly && user.HardRequirements.EcoFriendly)
@@ -79,5 +78,4 @@ func FilterRecipesByTags(recipes []*database.RecipeWithProperties, user *databas
 		ret = ret || (!rwp.Properties.WheatFree && user.HardRequirements.WheatFree)
 		return ret
 	})
-	return filteredRecipes
 }

@@ -23,9 +23,8 @@ type Properties struct {
 }
 
 type RecipeProperties struct {
-	CookingTime  uint8    `json:"cooking_time"`
-	Region       []string `json:"region"`
-	CookingLevel uint8    `json:"cooking_level"`
+	CookingTime  uint8 `json:"cooking_time"`
+	CookingLevel uint8 `json:"cooking_level"`
 }
 
 type Ingredient struct {
@@ -59,9 +58,10 @@ type RecipeWithProperties struct {
 }
 
 type RecipeShort struct {
-	Id     uint32
-	Name   string
-	Image  string
-	Rating uint32
-	Tags   []string
+	Id           uint32
+	Name         string
+	Image        string
+	Rating       uint32
+	CookingLevel uint8
+	Tags         []string
 }

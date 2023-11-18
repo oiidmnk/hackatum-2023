@@ -40,6 +40,8 @@ func main() {
 	router.GET("/image/:path", getImage)
 	router.GET("/user/:id", getUser)
 	router.GET("/user", getNewUserId)
+	router.POST("/user/:id/preferences", updateUserPreferences)
+	router.POST("/user/:id/requirements", updateUserRequirements)
 	log.Fatal(router.Run(":8080"))
 }
 
@@ -83,6 +85,36 @@ func getNewUserId(ctx *gin.Context) {
 		Preferences:      utils.CreatePreferences(nil, tags),
 	})
 	ctx.JSON(http.StatusOK, id)
+}
+
+func updateUserPreferences(ctx *gin.Context) {
+	id, _ := strconv.ParseInt(ctx.Param("id"), 10, 32)
+	if int(id) >= len(users) {
+		ctx.JSON(http.StatusNotFound, nil)
+		return
+	}
+	var preferences map[string]uint32
+	err := ctx.BindJSON(&preferences)
+	if err != nil {
+		log.Print(err)
+	}
+	users[id].Preferences = utils.CreatePreferences(preferences, tags)
+	ctx.JSON(http.StatusOK, nil)
+}
+
+func updateUserRequirements(ctx *gin.Context) {
+	id, _ := strconv.ParseInt(ctx.Param("id"), 10, 32)
+	if int(id) >= len(users) {
+		ctx.JSON(http.StatusNotFound, nil)
+		return
+	}
+	var hardRequirements database.Properties
+	err := ctx.BindJSON(&hardRequirements)
+	if err != nil {
+		log.Print(err)
+	}
+	users[id].HardRequirements = hardRequirements
+	ctx.JSON(http.StatusOK, nil)
 }
 
 func CORSMiddleware() gin.HandlerFunc {
