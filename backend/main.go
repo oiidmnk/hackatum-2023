@@ -18,7 +18,6 @@ var (
 )
 
 func main() {
-
 	utils.OpenAndUnmarshal("database/users.json", any(&users))
 	utils.AssignIdUsers(users)
 	utils.OpenAndUnmarshal("database/ingredients.json", any(&ingredients))
@@ -32,6 +31,7 @@ func main() {
 
 	router := gin.Default()
 	router.GET("/recipes", getRecipes)
+	router.GET("/image/:path", getImage)
 	log.Fatal(router.Run(":8080"))
 
 	return
@@ -39,4 +39,14 @@ func main() {
 
 func getRecipes(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, recipesShort)
+}
+
+func getImage(ctx *gin.Context) {
+	name := ctx.Param("path")
+	if name[len(name)-4:] == ".png" {
+		ctx.Header("Content-Type", "image/png")
+	} else if name[len(name)-4:] == ".jpg" || name[len(name)-5:] == ".jpeg" {
+		ctx.Header("Content-Type", "image/jpeg")
+	}
+	ctx.File(fmt.Sprintf("database/images/%s", name))
 }

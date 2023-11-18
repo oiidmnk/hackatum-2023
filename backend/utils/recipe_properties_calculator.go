@@ -1,6 +1,8 @@
 package utils
 
 import (
+	"fmt"
+	"log"
 	"slices"
 
 	"backend/database"
@@ -10,14 +12,15 @@ func RecipesToRecipesWithProperties(recipes []*database.Recipe, ingredients []*d
 	recipesWithProperties := make([]*database.RecipeWithProperties, 0, len(recipes))
 	for _, recipe := range recipes {
 		recipesWithProperties = append(recipesWithProperties, &database.RecipeWithProperties{
-			Id:               recipe.Id,
-			Name:             recipe.Name,
-			Properties:       ingredientsToProperties(recipe.Ingredients, ingredients),
-			RecipeProperties: recipe.RecipeProperties,
-			Tags:             recipe.Tags,
-			Description:      recipe.Description,
-			Image:            recipe.Image,
-			Rating:           recipe.Rating,
+			Id:                  recipe.Id,
+			Name:                recipe.Name,
+			Properties:          ingredientsToProperties(recipe.Ingredients, ingredients),
+			RecipeProperties:    recipe.RecipeProperties,
+			Tags:                recipe.Tags,
+			Description:         recipe.Description,
+			Image:               recipe.Image,
+			Rating:              recipe.Rating,
+			CookingInstructions: recipe.CookingInstructions,
 		})
 	}
 	return recipesWithProperties
@@ -54,6 +57,13 @@ func ingredientsToProperties(ingredientNames []string, allIngredients []*databas
 			property.EcoFriendly = ingredient.Properties.EcoFriendly && property.EcoFriendly
 			property.GlutenFree = ingredient.Properties.GlutenFree && property.GlutenFree
 			property.NutFree = ingredient.Properties.NutFree && property.NutFree
+		}
+	}
+	for _, ingredientName := range ingredientNames {
+		if !slices.ContainsFunc(allIngredients, func(ingredient *database.Ingredient) bool {
+			return ingredient.Name == ingredientName
+		}) {
+			log.Fatal(fmt.Sprintf("Ingredient %s not found", ingredientName))
 		}
 	}
 	return property

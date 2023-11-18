@@ -36,25 +36,27 @@ type Ingredient struct {
 }
 
 type Recipe struct {
-	Id               uint32
-	Name             string           `json:"name"`
-	Ingredients      []string         `json:"ingredients"`
-	RecipeProperties RecipeProperties `json:"recipe_properties"`
-	Tags             []string         `json:"tags"`
-	Description      string           `json:"description"`
-	Image            string           `json:"image"`
-	Rating           uint8            `json:"rating"`
+	Id                  uint32
+	Name                string           `json:"name"`
+	Ingredients         []string         `json:"ingredients"`
+	RecipeProperties    RecipeProperties `json:"recipe_properties"`
+	Tags                []string         `json:"tags"`
+	Description         string           `json:"description"`
+	Image               string           `json:"image"`
+	Rating              uint8            `json:"rating"`
+	CookingInstructions string           `json:"cooking_instructions"`
 }
 
 type RecipeWithProperties struct {
-	Id               uint32
-	Name             string
-	Properties       Properties
-	RecipeProperties RecipeProperties
-	Tags             []string
-	Description      string
-	Image            string
-	Rating           uint8
+	Id                  uint32
+	Name                string
+	Properties          Properties
+	RecipeProperties    RecipeProperties
+	Tags                []string
+	Description         string
+	Image               string
+	Rating              uint8
+	CookingInstructions string
 }
 
 type RecipeShort struct {
