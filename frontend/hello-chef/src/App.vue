@@ -68,7 +68,7 @@
               </button>
             </div>
             <!--Preferences-->
-            <div class="grid grid-cols-3 gap-4" v-if="showPreferences">
+            <div class="grid grid-cols-5 gap-4 overflow-scroll" v-if="showPreferences">
               <button
                 v-for="(value, key) in preferences"
                 :key="key"
