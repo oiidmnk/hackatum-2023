@@ -72,13 +72,13 @@ func ingredientsToProperties(ingredientNames []string, allIngredients []*databas
 	return property
 }
 
-func AddTagsToRecipes(recipes []*database.RecipeWithProperties) {
+func AddIconTagsToRecipes(recipes []*database.RecipeWithProperties) {
 	for _, recipe := range recipes {
-		recipe.Tags = append(recipe.Tags, getTags(recipe.Properties)...)
+		recipe.IconTags = getIconTags(recipe.Properties)
 	}
 }
 
-func getTags(properties database.Properties) []string {
+func getIconTags(properties database.Properties) []string {
 	ret := make([]string, 0)
 
 	if properties.Vegan {
@@ -115,4 +115,30 @@ func GetTags(recipes []*database.RecipeWithProperties) []string {
 	}
 
 	return keys
+}
+
+func ConvertPreferences(preferences map[string]bool) map[string]uint32 {
+	ret := make(map[string]uint32, 0)
+
+	for k, v := range preferences {
+		if v {
+			ret[k] = 2
+		}
+	}
+
+	return ret
+}
+
+func UpdatePreferences(preferences map[string]uint32, user *database.User) {
+	for k, v := range preferences {
+		user.Preferences[k] *= v
+	}
+}
+
+func SumPreferences(preferences map[string]uint32, tags []string) int {
+	ret := 0
+	for _, tag := range tags {
+		ret += int(preferences[tag])
+	}
+	return ret
 }

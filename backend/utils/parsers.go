@@ -52,9 +52,11 @@ func ConvertRecipesToShortRecipes(recipes []*database.RecipeWithProperties) []*d
 			Id:           recipe.Id,
 			Name:         recipe.Name,
 			Image:        recipe.Image,
-			Rating:       uint32(recipe.Rating),
+			Rating:       recipe.Rating,
 			Tags:         recipe.Tags,
+			IconTags:     recipe.IconTags,
 			CookingLevel: recipe.RecipeProperties.CookingLevel,
+			CookingTime:  recipe.RecipeProperties.CookingTime,
 		})
 	}
 	return shortRecipes

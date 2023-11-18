@@ -51,6 +51,7 @@ type RecipeWithProperties struct {
 	Properties          Properties
 	RecipeProperties    RecipeProperties
 	Tags                []string
+	IconTags            []string
 	Description         string
 	Image               string
 	Rating              uint8
@@ -61,7 +62,9 @@ type RecipeShort struct {
 	Id           uint32
 	Name         string
 	Image        string
-	Rating       uint32
+	Rating       uint8
 	CookingLevel uint8
+	CookingTime  uint8
 	Tags         []string
+	IconTags     []string
 }
