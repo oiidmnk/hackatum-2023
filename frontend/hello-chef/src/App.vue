@@ -183,7 +183,7 @@ export default{
       }
     },
     getRecipes() {
-      const apiUrl = 'http://localhost:8080/api/recipes'; // Replace with the actual API URL
+      const apiUrl = 'http://localhost:8080/recipes'; // Replace with the actual API URL
   
       fetch(apiUrl)
         .then(response => {
