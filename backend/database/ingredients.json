@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Almond Milk",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": false
+    }
+  }
+]

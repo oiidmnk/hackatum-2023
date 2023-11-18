@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Vegan Chocolate Cake",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": false,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 45,
+      "region": [
+        "American"
+      ],
+      "cooking_level": 2
+    },
+    "description": "A delicious and moist vegan chocolate cake for all to enjoy.",
+    "image": "https://example.com/images/vegan-chocolate-cake.jpg",
+    "rating": 5,
+    "tags": ["asian", "indian", "healthy", "spicy"]
+  }
+]
