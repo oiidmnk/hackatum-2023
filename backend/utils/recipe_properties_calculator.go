@@ -1,12 +1,12 @@
 package utils
 
 import (
+	"backend/database"
 	"backend/database/tags"
 	"fmt"
 	"log"
 	"slices"
-
-	"backend/database"
+	"strings"
 )
 
 func RecipesToRecipesWithProperties(recipes []*database.Recipe, ingredients []*database.Ingredient) []*database.RecipeWithProperties {
@@ -44,7 +44,9 @@ func ingredientsToProperties(ingredientNames []string, allIngredients []*databas
 		NutFree:     true,
 	}
 	for _, ingredient := range allIngredients {
-		if slices.Contains(ingredientNames, ingredient.Name) {
+		if slices.ContainsFunc(ingredientNames, func(ingredientName string) bool {
+			return strings.Trim(strings.ToLower(ingredientName), " \n\t") == strings.Trim(strings.ToLower(ingredient.Name), " \n\t")
+		}) {
 			property.Vegan = ingredient.Properties.Vegan && property.Vegan
 			property.Vegetarian = ingredient.Properties.Vegetarian && property.Vegetarian
 			property.AlcoholFree = ingredient.Properties.AlcoholFree && property.AlcoholFree
