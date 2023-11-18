@@ -44,5 +44,51 @@
       "sweetness_level": 3,
       "sourness_level": 2
     }
+  },
+  {
+    "name": "Alice Smith",
+    "hard_requirements": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": false,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": false
+    },
+    "preferences": {
+      "spicy_level": 2,
+      "sweetness_level": 4,
+      "sourness_level": 1
+    }
+  },
+  {
+    "name": "Bob Johnson",
+    "hard_requirements": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": false,
+      "wheat_free": false,
+      "soy_free": false,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": false,
+      "nut_free": false
+    },
+    "preferences": {
+      "spicy_level": 3,
+      "sweetness_level": 2,
+      "sourness_level": 3
+    }
   }
 ]

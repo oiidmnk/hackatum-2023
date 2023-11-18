@@ -1,23 +1,27 @@
 package utils
 
 import (
-	"slices"
-
 	"backend/database"
+	"backend/database/tags"
+	"fmt"
+	"log"
+	"slices"
+	"strings"
 )
 
 func RecipesToRecipesWithProperties(recipes []*database.Recipe, ingredients []*database.Ingredient) []*database.RecipeWithProperties {
 	recipesWithProperties := make([]*database.RecipeWithProperties, 0, len(recipes))
 	for _, recipe := range recipes {
 		recipesWithProperties = append(recipesWithProperties, &database.RecipeWithProperties{
-			Id:               recipe.Id,
-			Name:             recipe.Name,
-			Properties:       ingredientsToProperties(recipe.Ingredients, ingredients),
-			RecipeProperties: recipe.RecipeProperties,
-			Tags:             recipe.Tags,
-			Description:      recipe.Description,
-			Image:            recipe.Image,
-			Rating:           recipe.Rating,
+			Id:                  recipe.Id,
+			Name:                recipe.Name,
+			Properties:          ingredientsToProperties(recipe.Ingredients, ingredients),
+			RecipeProperties:    recipe.RecipeProperties,
+			Tags:                recipe.Tags,
+			Description:         recipe.Description,
+			Image:               recipe.Image,
+			Rating:              recipe.Rating,
+			CookingInstructions: recipe.CookingInstructions,
 		})
 	}
 	return recipesWithProperties
@@ -40,7 +44,9 @@ func ingredientsToProperties(ingredientNames []string, allIngredients []*databas
 		NutFree:     true,
 	}
 	for _, ingredient := range allIngredients {
-		if slices.Contains(ingredientNames, ingredient.Name) {
+		if slices.ContainsFunc(ingredientNames, func(ingredientName string) bool {
+			return strings.Trim(strings.ToLower(ingredientName), " \n\t") == strings.Trim(strings.ToLower(ingredient.Name), " \n\t")
+		}) {
 			property.Vegan = ingredient.Properties.Vegan && property.Vegan
 			property.Vegetarian = ingredient.Properties.Vegetarian && property.Vegetarian
 			property.AlcoholFree = ingredient.Properties.AlcoholFree && property.AlcoholFree
@@ -56,5 +62,57 @@ func ingredientsToProperties(ingredientNames []string, allIngredients []*databas
 			property.NutFree = ingredient.Properties.NutFree && property.NutFree
 		}
 	}
+	for _, ingredientName := range ingredientNames {
+		if !slices.ContainsFunc(allIngredients, func(ingredient *database.Ingredient) bool {
+			return strings.Trim(strings.ToLower(ingredientName), " \n\t") == strings.Trim(strings.ToLower(ingredient.Name), " \n\t")
+		}) {
+			log.Fatal(fmt.Sprintf("Ingredient %s not found", ingredientName))
+		}
+	}
 	return property
+}
+
+func AddTagsToRecipes(recipes []*database.RecipeWithProperties) {
+	for _, recipe := range recipes {
+		recipe.Tags = append(recipe.Tags, getTags(recipe.Properties)...)
+	}
+}
+
+func getTags(properties database.Properties) []string {
+	ret := make([]string, 0)
+
+	if properties.Vegan {
+		ret = append(ret, tags.VEGAN)
+	}
+	if properties.Vegetarian {
+		ret = append(ret, tags.VEGETARIAN)
+	}
+	if properties.GlutenFree {
+		ret = append(ret, tags.GLUTENFREE)
+	}
+	if !properties.Mild {
+		ret = append(ret, tags.SPICY)
+	}
+
+	return ret
+}
+
+func GetTags(recipes []*database.RecipeWithProperties) []string {
+	ret := make(map[string]bool, 0)
+
+	for _, recipe := range recipes {
+		for _, tag := range recipe.Tags {
+			ret[tag] = true
+		}
+	}
+
+	keys := make([]string, len(ret))
+
+	i := 0
+	for k := range ret {
+		keys[i] = k
+		i++
+	}
+
+	return keys
 }
