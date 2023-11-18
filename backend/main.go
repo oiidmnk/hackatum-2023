@@ -137,7 +137,7 @@ func updateUserRequirements(ctx *gin.Context) {
 	if err != nil {
 		log.Print(err)
 	}
-	users[id].HardRequirements = hardRequirements["hard_requirements"]
+	users[id].HardRequirements = hardRequirements["hardRequirements"]
 	ctx.JSON(http.StatusOK, nil)
 }
 
