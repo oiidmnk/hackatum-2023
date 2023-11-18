@@ -340,5 +340,1895 @@
       "gluten_free": true,
       "nut_free": true
     }
+  },
+  {
+    "name": "Eggplant",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Zucchini",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Bell peppers",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Tomato sauce",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Onion",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Garlic",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Herbes de Provence",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Chicken breast",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Yogurt",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Garam masala",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Tomato puree",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cream",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Butter",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Ginger",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Pork shoulder",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": false,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Achiote paste",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Guajillo chilies",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Pineapple",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cilantro",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Corn tortillas",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Pizza dough",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Fresh mozzarella cheese",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Fresh basil leaves",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Extra virgin olive oil",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Beef",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Bacon",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": false,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Red wine",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Carrots",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Mushrooms",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Olive oil",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Flour",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cherry tomatoes",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Dried Italian herbs",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Black pepper",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Lemon juice",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cumin",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cinnamon",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cayenne pepper",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Jalapeno",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Romaine lettuce",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Croutons",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": false,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Parmesan cheese",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Anchovy fillets",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Egg yolks",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": false,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Dijon mustard",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": false,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Worcestershire sauce",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Salmon fillets",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Lemon zest",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Fresh dill",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Fresh parsley",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Quinoa",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Black beans",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Corn",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Red bell pepper",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Avocado",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Lime juice",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Chili powder",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Duck breast",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Orange zest",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Orange juice",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Chicken stock",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cognac",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Sugar",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Vinegar",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Jumbo pasta shells",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Ricotta cheese",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Spinach",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Egg",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": false,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Mozzarella cheese",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Oregano",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Ground chicken",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Thai basil leaves",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Bird's eye chili",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Soy sauce",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": false,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Oyster sauce",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": false,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Fish sauce",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": false,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Brown sugar",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Jasmine rice",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Maple syrup",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Fresh thyme",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Dark chocolate",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": false,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": false
+    }
+  },
+  {
+    "name": "Eggs",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": false,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Vanilla extract",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Arborio rice",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "White wine",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Thyme",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Lamb",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Tomatoes",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Coriander",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cardamom",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Cloves",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Bay leaves",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Paprika",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Vegetable oil",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": false,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Butternut squash",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Heavy cream",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Nutmeg",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "White fish fillets",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Potatoes",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Beer",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Baking powder",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Lemon wedges",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Tartar sauce",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": false,
+      "lactose_free": true,
+      "egg_free": false,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": false,
+      "mild": false,
+      "eco_friendly": false,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Pumpkin puree",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    }
+  },
+  {
+    "name": "Pie crust",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": false,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": false,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    }
   }
 ]

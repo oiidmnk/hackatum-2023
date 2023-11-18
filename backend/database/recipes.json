@@ -1,211 +1,560 @@
 [
   {
-    "name": "Vegan Chocolate Cake",
+    "name": "Classic French Ratatouille",
     "recipe_properties": {
-      "cooking_time": 45,
-      "region": [
-        "American"
-      ],
+      "cooking_time": 2,
       "cooking_level": 2
     },
-    "description": "A delicious and moist vegan chocolate cake for all to enjoy.",
-    "image": "image/vegan-chocolate-cake.jpg",
+    "description": "Hearty vegetable stew featuring eggplant, zucchini, and bell peppers in a tomato base, seasoned with Herbes de Provence.",
+    "image": "image/ratatouille.jpg",
+    "rating": 4,
+    "tags": [
+      "French",
+      "Vegetarian",
+      "Stew",
+      "Hearty"
+    ],
+    "ingredients": [
+      "Eggplant",
+      "Zucchini",
+      "Bell peppers",
+      "Tomato sauce",
+      "Onion",
+      "Garlic",
+      "Herbes de Provence"
+    ],
+    "cooking_instructions": "Saut\u00e9 vegetables separately, layer in a pot, cover with tomato sauce, and simmer."
+  },
+  {
+    "name": "Indian Butter Chicken",
+    "recipe_properties": {
+      "cooking_time": 3,
+      "cooking_level": 3
+    },
+    "description": "Creamy tomato-based curry cooked with marinated grilled chicken, enriched with butter and cream, flavored with garam masala.",
+    "image": "image/butter-chicken.jpg",
     "rating": 5,
     "tags": [
-      "asian",
-      "indian",
+      "Indian",
+      "Curry",
+      "Spicy",
+      "Rich"
+    ],
+    "ingredients": [
+      "Chicken breast",
+      "Yogurt",
+      "Garam masala",
+      "Tomato puree",
+      "Cream",
+      "Butter",
+      "Onion",
+      "Garlic",
+      "Ginger"
+    ],
+    "cooking_instructions": "Marinate and grill chicken. Cook onion, garlic, ginger, spices, and tomato. Add chicken and cream."
+  },
+  {
+    "name": "Mexican Tacos al Pastor",
+    "recipe_properties": {
+      "cooking_time": 3,
+      "cooking_level": 3
+    },
+    "description": "Pork shoulder marinated in a blend of chilies, spices, and pineapple, then roasted and served on corn tortillas with cilantro and onions.",
+    "image": "image/tacos-al-pastor.jpg",
+    "rating": 5,
+    "tags": [
+      "Mexican",
+      "Street Food",
+      "Spicy",
+      "Flavorful"
+    ],
+    "ingredients": [
+      "Pork shoulder",
+      "Achiote paste",
+      "Guajillo chilies",
+      "Pineapple",
+      "Onion",
+      "Cilantro",
+      "Corn tortillas"
+    ],
+    "cooking_instructions": "Marinate pork, roast with pineapple, chop, and serve on tortillas with toppings."
+  },
+  {
+    "name": "Classic Margherita Pizza",
+    "recipe_properties": {
+      "cooking_time": 2,
+      "cooking_level": 2
+    },
+    "description": "A simple yet classic Italian pizza with a crisp crust, tangy tomato sauce, fresh mozzarella, and basil leaves.",
+    "image": "image/margherita-pizza.jpg",
+    "rating": 5,
+    "tags": [
+      "italian",
+      "european",
+      "vegetarian"
+    ],
+    "ingredients": [
+      "Pizza dough",
+      "Tomato sauce",
+      "Fresh mozzarella cheese",
+      "Fresh basil leaves",
+      "Extra virgin olive oil",
+      "Salt"
+    ],
+    "cooking_instructions": "Stretch out the dough, apply sauce, add cheese and basil, drizzle with oil, season, and bake in a preheated oven at the highest temperature until crust is golden and cheese is bubbly."
+  },
+  {
+    "name": "Beef Bourguignon",
+    "recipe_properties": {
+      "cooking_time": 3,
+      "cooking_level": 3
+    },
+    "description": "A rich French stew with tender beef braised in red wine, with a savory assortment of mushrooms, pearl onions, and bacon.",
+    "image": "image/beef-bourguignon.jpg",
+    "rating": 5,
+    "tags": [
+      "french",
+      "european",
+      "comfort"
+    ],
+    "ingredients": [
+      "beef",
+      "bacon",
+      "red wine",
+      "onion",
+      "carrots",
+      "mushrooms",
+      "garlic",
+      "olive oil",
+      "flour"
+    ],
+    "cooking_instructions": "Brown the beef and bacon in olive oil. Remove and set aside. In the same pot, cook the onion and carrots. Sprinkle flour, cook for a minute. Add wine, stock, garlic, and bouquet garni. Return beef and bacon to pot. Simmer for 2 hours. Sauté mushrooms and pearl onions separately and add to the stew. Cook for another 30 minutes. Season with salt and pepper. Serve with crusty bread."
+  },
+  {
+    "name": "Roasted Vegetable Medley",
+    "recipe_properties": {
+      "cooking_time": 1,
+      "cooking_level": 1
+    },
+    "description": "A colorful and healthy assortment of roasted vegetables seasoned with herbs and olive oil.",
+    "image": "image/roasted-vegetable-medley.jpg",
+    "rating": 4,
+    "tags": [
+      "vegetarian",
+      "vegan",
       "healthy",
+      "roasted"
+    ],
+    "ingredients": [
+      "Bell peppers",
+      "Zucchini",
+      "Carrots",
+      "Onion",
+      "Cherry tomatoes",
+      "Garlic",
+      "Olive oil",
+      "Dried Italian herbs",
+      "Salt",
+      "Black pepper"
+    ],
+    "cooking_instructions": "Chop the vegetables into even pieces. Toss with olive oil, minced garlic, salt, pepper, and Italian herbs. Spread on a baking sheet. Roast in a preheated oven until vegetables are tender and slightly caramelized. Serve warm as a side dish or over rice for a main course."
+  },
+  {
+    "name": "Chicken Tikka Masala",
+    "recipe_properties": {
+      "cooking_time": 2,
+      "cooking_level": 2
+    },
+    "description": "A beloved Indian dish featuring grilled marinated chicken pieces smothered in a creamy, spiced tomato sauce.",
+    "image": "image/chicken-tikka-masala.jpg",
+    "rating": 5,
+    "tags": [
+      "indian",
+      "asian",
+      "spicy",
+      "comfort"
+    ],
+    "ingredients": [
+      "Chicken breast",
+      "Yogurt",
+      "Lemon juice",
+      "Cumin",
+      "Cinnamon",
+      "Cayenne pepper",
+      "Black pepper",
+      "Ginger",
+      "Tomato sauce",
+      "Cream",
+      "Garlic",
+      "Jalapeno",
+      "Cilantro"
+    ],
+    "cooking_instructions": "Marinate chicken pieces in yogurt, lemon juice, and spices, then grill until cooked. For the sauce, sauté garlic and jalapeno, add spices, tomato sauce, and cream. Simmer until thickened. Add the grilled chicken to the sauce and cook for 10 minutes. Garnish with cilantro and serve with rice or naan."
+  },
+  {
+    "name": "Classic Caesar Salad",
+    "recipe_properties": {
+      "cooking_time": 1,
+      "cooking_level": 1
+    },
+    "description": "A timeless salad with crisp romaine lettuce, crunchy croutons, and a creamy Parmesan dressing.",
+    "image": "image/classic-caesar-salad.jpg",
+    "rating": 4,
+    "tags": [
+      "italian",
+      "salad",
+      "classic"
+    ],
+    "ingredients": [
+      "Romaine lettuce",
+      "Croutons",
+      "Parmesan cheese",
+      "Anchovy fillets",
+      "Egg yolks",
+      "Garlic",
+      "Lemon juice",
+      "Dijon mustard",
+      "Worcestershire sauce",
+      "Olive oil",
+      "Black pepper"
+    ],
+    "cooking_instructions": "Whisk together egg yolks, lemon juice, finely chopped anchovies, garlic, Dijon mustard, and Worcestershire sauce. Gradually blend in olive oil to make a creamy dressing. Toss romaine lettuce with the dressing, add croutons and shaved Parmesan cheese. Season with black pepper and serve immediately."
+  },
+  {
+    "name": "Lemon Herb Grilled Salmon",
+    "recipe_properties": {
+      "cooking_time": 1,
+      "cooking_level": 2
+    },
+    "description": "Grilled salmon fillets marinated with a zesty lemon herb mixture for a light and flavorful seafood dish.",
+    "image": "image/lemon-herb-grilled-salmon.jpg",
+    "rating": 5,
+    "tags": [
+      "seafood",
+      "grilled",
+      "healthy"
+    ],
+    "ingredients": [
+      "Salmon fillets",
+      "Lemon zest",
+      "Lemon juice",
+      "Fresh dill",
+      "Fresh parsley",
+      "Garlic",
+      "Olive oil",
+      "Salt",
+      "Black pepper"
+    ],
+    "cooking_instructions": "Combine lemon zest, lemon juice, chopped dill, parsley, minced garlic, olive oil, salt, and pepper to create a marinade. Coat the salmon and let it marinate. Grill the salmon to desired doneness. Serve with extra lemon wedges and a sprinkle of fresh herbs."
+  },
+  {
+    "name": "Quinoa and Black Bean Salad",
+    "recipe_properties": {
+      "cooking_time": 1,
+      "cooking_level": 1
+    },
+    "description": "A hearty and nutritious salad with a Southwestern twist, featuring quinoa, black beans, and a variety of fresh vegetables.",
+    "image": "image/quinoa-black-bean-salad.jpg",
+    "rating": 4,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "salad",
+      "healthy"
+    ],
+    "ingredients": [
+      "Quinoa",
+      "Black beans",
+      "Corn",
+      "Red bell pepper",
+      "Avocado",
+      "Cilantro",
+      "Lime juice",
+      "Olive oil",
+      "Cumin",
+      "Chili powder",
+      "Salt",
+      "Black pepper"
+    ],
+    "cooking_instructions": "Cook quinoa according to package instructions and let it cool. Rinse and drain black beans. Dice the bell pepper and avocado. Chop cilantro. Whisk together lime juice, olive oil, cumin, chili powder, salt, and pepper to make the dressing. Toss all ingredients with the dressing and serve chilled or at room temperature."
+  },
+  {
+    "name": "Pan-Seared Duck Breast",
+    "recipe_properties": {
+      "cooking_time": 2,
+      "cooking_level": 3
+    },
+    "description": "A succulent duck breast with a crisp skin, served with a rich and aromatic orange sauce.",
+    "image": "image/pan-seared-duck-breast.jpg",
+    "rating": 5,
+    "tags": [
+      "french",
+      "gourmet",
+      "rich"
+    ],
+    "ingredients": [
+      "Duck breast",
+      "Orange zest",
+      "Orange juice",
+      "Chicken stock",
+      "Cognac",
+      "Sugar",
+      "Vinegar",
+      "Butter",
+      "Salt",
+      "Black Pepper"
+    ],
+    "cooking_instructions": "Score the duck skin, season with salt and pepper, and sear on the skin side down until crisp. Flip and cook to desired doneness. For the sauce, caramelize sugar, deglaze with vinegar, add orange juice, zest, stock, and reduce. Finish with a splash of cognac and swirl in butter. Serve the sliced duck with the orange sauce."
+  },
+  {
+    "name": "Spinach and Ricotta Stuffed Shells",
+    "recipe_properties": {
+      "cooking_time": 2,
+      "cooking_level": 2
+    },
+    "description": "Jumbo pasta shells filled with creamy ricotta and spinach, baked in a savory tomato sauce.",
+    "image": "image/spinach-ricotta-stuffed-shells.jpg",
+    "rating": 4,
+    "tags": [
+      "italian",
+      "vegetarian",
+      "baked"
+    ],
+    "ingredients": [
+      "Jumbo pasta shells",
+      "Ricotta cheese",
+      "Spinach",
+      "Egg",
+      "Parmesan cheese",
+      "Mozzarella cheese",
+      "Garlic",
+      "Tomato sauce",
+      "Oregano",
+      "Salt",
+      "Black pepper"
+    ],
+    "cooking_instructions": "Boil pasta shells until al dente. Mix ricotta, cooked spinach, egg, and Parmesan. Fill each shell with the mixture, place in a baking dish, cover with tomato sauce and mozzarella. Bake until bubbly and golden on top."
+  },
+  {
+    "name": "Spicy Thai Basil Chicken",
+    "recipe_properties": {
+      "cooking_time": 1,
+      "cooking_level": 2
+    },
+    "description": "A stir-fry dish with ground chicken, Thai basil, and a flavorful sauce, served over jasmine rice.",
+    "image": "image/spicy-thai-basil-chicken.jpg",
+    "rating": 5,
+    "tags": [
+      "thai",
+      "asian",
       "spicy"
     ],
     "ingredients": [
-      "flour",
-      "cocoa powder",
-      "baking soda",
-      "salt",
-      "sugar",
-      "water",
-      "vegetable oil",
-      "vanilla extract",
-      "vinegar"
-    ]
+      "Ground chicken",
+      "Thai basil leaves",
+      "Garlic",
+      "Bird's eye chili",
+      "Soy sauce",
+      "Oyster sauce",
+      "Fish sauce",
+      "Brown sugar",
+      "Jasmine rice"
+    ],
+    "cooking_instructions": "Stir-fry garlic and chilies, add chicken until browned. Mix in soy, oyster, and fish sauces with sugar, cook until caramelized. Stir in basil leaves until wilted. Serve over cooked jasmine rice."
   },
   {
-    "name": "Sushi Platter",
+    "name": "Maple Glazed Carrots",
     "recipe_properties": {
-      "cooking_time": 60,
-      "region": [
-        "Japanese"
-      ],
+      "cooking_time": 1,
+      "cooking_level": 1
+    },
+    "description": "Tender carrots glazed in a sweet and buttery maple syrup sauce, sprinkled with fresh herbs.",
+    "image": "image/maple-glazed-carrots.jpg",
+    "rating": 4,
+    "tags": [
+      "vegetarian",
+      "side dish",
+      "sweet"
+    ],
+    "ingredients": [
+      "Carrots",
+      "Maple syrup",
+      "Butter",
+      "Salt",
+      "Black Pepper",
+      "Fresh thyme"
+    ],
+    "cooking_instructions": "Cook carrots in boiling water until tender. Drain and sauté with butter, maple syrup, salt, and pepper. Garnish with thyme before serving."
+  },
+  {
+    "name": "Chocolate Lava Cake",
+    "recipe_properties": {
+      "cooking_time": 2,
       "cooking_level": 3
     },
-    "description": "An assortment of fresh sushi, including nigiri, sashimi, and rolls, with accompaniments.",
-    "image": "image/sushi-platter.jpg",
-    "rating": 5,
-    "tags": [
-      "delicate",
-      "fresh",
-      "traditional"
-    ],
-    "ingredients": [
-      "flour",
-      "cocoa powder",
-      "baking soda",
-      "salt",
-      "sugar",
-      "water",
-      "vegetable oil",
-      "vanilla extract",
-      "vinegar"
-    ]
-  },
-  {
-    "name": "Herb-Crusted Tofu Steak",
-    "recipe_properties": {
-      "cooking_time": 20,
-      "region": [
-        "European"
-      ],
-      "cooking_level": 1
-    },
-    "description": "Savory tofu steaks coated in a fragrant blend of herbs and spices.",
-    "image": "image/herb-crusted-tofu-steak.jpg",
-    "rating": 4,
-    "tags": [
-      "main course",
-      "tofu",
-      "herbs",
-      "vegan"
-    ],
-    "ingredients": [
-      "flour",
-      "cocoa powder",
-      "baking soda",
-      "salt",
-      "sugar",
-      "water",
-      "vegetable oil",
-      "vanilla extract",
-      "vinegar"
-    ]
-  },
-  {
-    "name": "Cauliflower Buffalo Wings",
-    "recipe_properties": {
-      "cooking_time": 40,
-      "region": [
-        "American"
-      ],
-      "cooking_level": 2
-    },
-    "description": "Crispy baked cauliflower pieces coated in spicy buffalo sauce.",
-    "image": "image/cauliflower-buffalo-wings.jpg",
-    "rating": 4,
-    "tags": [
-      "appetizer",
-      "spicy",
-      "cauliflower",
-      "vegan"
-    ],
-    "ingredients": [
-      "flour",
-      "cocoa powder",
-      "baking soda",
-      "salt",
-      "sugar",
-      "water",
-      "vegetable oil",
-      "vanilla extract",
-      "vinegar"
-    ]
-  },
-  {
-    "name": "Avocado Chocolate Mousse",
-    "recipe_properties": {
-      "cooking_time": 15,
-      "region": [
-        "French"
-      ],
-      "cooking_level": 1
-    },
-    "description": "A rich and creamy chocolate mousse made with ripe avocados.",
-    "image": "image/avocado-chocolate-mousse.jpg",
+    "description": "A decadent dessert with a gooey chocolate center, perfect with a scoop of vanilla ice cream.",
+    "image": "image/chocolate-lava-cake.jpg",
     "rating": 5,
     "tags": [
       "dessert",
       "chocolate",
-      "avocado",
-      "healthy"
+      "baked"
     ],
     "ingredients": [
-      "flour",
-      "cocoa powder",
-      "baking soda",
-      "salt",
-      "sugar",
-      "water",
-      "vegetable oil",
-      "vanilla extract",
-      "vinegar"
-    ]
-  },
-  {
-    "name": "Zucchini Noodles with Pesto",
-    "recipe_properties": {
-      "cooking_time": 20,
-      "region": [
-        "Italian"
-      ],
-      "cooking_level": 1
-    },
-    "description": "Spiralized zucchini noodles tossed in a homemade pesto sauce.",
-    "image": "image/zucchini-noodles-with-pesto.jpg",
-    "rating": 4,
-    "tags": [
-      "main course",
-      "vegetarian",
-      "zucchini",
-      "pesto"
-    ],
-    "ingredients": [
+      "Dark chocolate",
+      "Butter",
+      "Eggs",
+      "Sugar",
       "Flour",
-      "cocoa powder",
-      "baking soda",
-      "salt",
-      "sugar",
-      "water",
-      "vegetable oil",
-      "vanilla extract",
-      "vinegar"
-    ]
+      "Vanilla extract"
+    ],
+    "cooking_instructions": "Melt chocolate and butter together. Whisk eggs and sugar, then fold in the chocolate mixture and flour. Pour into ramekins and bake until edges are firm but center is runny. Serve warm."
   },
   {
-    "name": "Lentil and Beetroot Salad",
+    "name": "Creamy Mushroom Risotto",
     "recipe_properties": {
-      "cooking_time": 30,
-      "region": [
-        "Mediterranean"
-      ],
-      "cooking_level": 1
+      "cooking_time": 2,
+      "cooking_level": 2
     },
-    "description": "Spiralized zucchini noodles tossed in a homemade pesto sauce.",
-    "image": "image/Lentil-and-Beetroot-Salad.jpg",
+    "description": "A classic Italian risotto with earthy mushrooms and rich Parmesan cheese.",
+    "image": "image/creamy-mushroom-risotto.jpg",
     "rating": 4,
     "tags": [
-      "main course",
-      "vegetarian",
-      "zucchini",
-      "pesto"
+      "italian",
+      "comfort",
+      "creamy"
     ],
     "ingredients": [
-      "flour",
-      "cocoa powder",
-      "baking soda",
-      "salt",
-      "sugar",
-      "water",
-      "vegetable oil",
-      "vanilla extract",
-      "vinegar"
-    ]
+      "Arborio rice",
+      "Mushrooms",
+      "Chicken stock",
+      "Onion",
+      "Garlic",
+      "White wine",
+      "Parmesan cheese",
+      "Butter",
+      "Olive oil",
+      "Thyme",
+      "Salt",
+      "Black pepper"
+    ],
+    "cooking_instructions": "Sauté onions, garlic, and mushrooms in olive oil. Add rice, toast slightly, then deglaze with wine. Gradually add stock, stirring continuously. Finish with butter, Parmesan, and thyme."
+  },
+  {
+    "name": "Lamb Rogan Josh",
+    "recipe_properties": {
+      "cooking_time": 3,
+      "cooking_level": 3
+    },
+    "description": "Aromatic Kashmiri dish featuring tender pieces of lamb in a rich and spicy tomato sauce.",
+    "image": "image/lamb-rogan-josh.jpg",
+    "rating": 5,
+    "tags": [
+      "indian",
+      "spicy",
+      "aromatic"
+    ],
+    "ingredients": [
+      "Lamb",
+      "Yogurt",
+      "Tomatoes",
+      "Ginger",
+      "Garlic",
+      "Garam masala",
+      "Cumin",
+      "Coriander",
+      "Cardamom",
+      "Cinnamon",
+      "Cloves",
+      "Bay leaves",
+      "Paprika",
+      "Chili powder",
+      "Salt",
+      "Vegetable oil"
+    ],
+    "cooking_instructions": "Marinate lamb in yogurt and spices. Brown lamb in oil, set aside. Cook down tomatoes with remaining spices. Return lamb to pot, cover, and simmer until tender."
+  },
+  {
+    "name": "Butternut Squash Soup",
+    "recipe_properties": {
+      "cooking_time": 1,
+      "cooking_level": 1
+    },
+    "description": "A smooth and creamy soup made with roasted butternut squash and a hint of nutmeg.",
+    "image": "image/butternut-squash-soup.jpg",
+    "rating": 4,
+    "tags": [
+      "vegetarian",
+      "soup",
+      "autumn"
+    ],
+    "ingredients": [
+      "Butternut squash",
+      "Onion",
+      "Garlic",
+      "Chicken stock",
+      "Heavy cream",
+      "Nutmeg",
+      "Butter",
+      "Salt",
+      "Black pepper"
+    ],
+    "cooking_instructions": "Roast butternut squash until tender. Sauté onion and garlic in butter. Blend squash with sautéed mixture and stock. Simmer, add cream, nutmeg, salt, and pepper."
+  },
+  {
+    "name": "Fish and Chips",
+    "recipe_properties": {
+      "cooking_time": 2,
+      "cooking_level": 2
+    },
+    "description": "Crispy beer-battered fish served with golden fried chips, a British classic.",
+    "image": "image/fish-and-chips.jpg",
+    "rating": 5,
+    "tags": [
+      "british",
+      "fried",
+      "classic"
+    ],
+    "ingredients": [
+      "White fish fillets",
+      "Potatoes",
+      "Flour",
+      "Beer",
+      "Baking powder",
+      "Salt",
+      "Black Pepper",
+      "Vegetable oil",
+      "Lemon wedges",
+      "Tartar sauce"
+    ],
+    "cooking_instructions": "Dip fish fillets in beer batter. Deep fry until golden. Cut potatoes into chips, fry until crispy. Serve with lemon wedges and tartar sauce."
+  },
+  {
+    "name": "Pumpkin Pie",
+    "recipe_properties": {
+      "cooking_time": 2,
+      "cooking_level": 2
+    },
+    "description": "A sweet dessert pie with a spiced pumpkin-based custard filling in a flaky crust.",
+    "image": "image/pumpkin-pie.jpg",
+    "rating": 5,
+    "tags": [
+      "dessert",
+      "autumn",
+      "spiced"
+    ],
+    "ingredients": [
+      "Pumpkin puree",
+      "Pie crust",
+      "Eggs",
+      "Heavy cream",
+      "Brown sugar",
+      "Cinnamon",
+      "Ginger",
+      "Nutmeg",
+      "Cloves",
+      "Salt"
+    ],
+    "cooking_instructions": "Mix pumpkin puree with eggs, cream, sugar, and spices. Pour into pie crust. Bake until filling is set and crust is golden."
   }
 ]
