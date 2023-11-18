@@ -10,6 +10,93 @@
         </ul>
       </nav>
     </div>
+    <!--Popup-->
+    <div
+      v-if="showNewUserPopup"
+      class="modal fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center"
+    >
+      <!-- The modal -->
+      <div
+        id="popupContainer"
+        class="m-auto p-5 border w-1/3 shadow-lg rounded-md bg-white"
+      >
+        <!-- Modal content -->
+        <div class="mt-3 text-center">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">Welcome!</h3>
+          <br />
+          <h4>
+            As a new user you need to select your
+            <p v-if="showHardRequirements">preferences</p>
+            <p v-if="showPreferences">Hard Requirements</p>
+            so make<br />
+            sure we can recommend you the best recipes possible!
+          </h4>
+          <br />
+          <!--Hard requirements-->
+          <div class="grid grid-cols-3 gap-4" v-if="showHardRequirements">
+            <button
+              v-for="(value, key) in hardRequirements"
+              :key="key"
+              :class="{
+                'bg-blue-500': !value,
+                'bg-blue-700': value,
+                'text-white': true,
+                'font-bold': true,
+                'py-2': true,
+                'px-4': true,
+                rounded: true,
+                'focus:outline-none': true,
+                'focus:shadow-outline': true,
+              }"
+              @click="toggleRequirement(key)"
+            >
+              {{ key.replace("_", " ") }}
+            </button>
+          </div>
+          <!-- Switch to preferences -->
+          <div class="items-center px-4 py-3" v-if="showHardRequirements">
+            <button
+              id="ok-btn"
+              @click="moveToPreferences"
+              class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500"
+            >
+              Set Preferences
+            </button>
+          </div>
+          <!--Preferences-->
+          <div class="grid grid-cols-3 gap-4" v-if="showPreferences">
+            <button
+              v-for="(value, key) in preferences"
+              :key="key"
+              :class="{
+                'bg-blue-500': !value,
+                'bg-blue-700': value,
+                'text-white': true,
+                'font-bold': true,
+                'py-2': true,
+                'px-4': true,
+                rounded: true,
+                'focus:outline-none': true,
+                'focus:shadow-outline': true,
+              }"
+              @click="toggleRequirement(key)"
+            >
+              {{ key.replace("_", " ") }}
+            </button>
+          </div>
+          <!-- Close Popup -->
+          <div class="items-center px-4 py-3" v-if="showPreferences">
+            <button
+              id="ok-btn"
+              @click="closeModal"
+              class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500"
+            >
+              Finished
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Search -->
     <div class="container min-w-full p-4 space-y-1">
       <!--Search Bar-->
@@ -98,7 +185,7 @@
 </template>
 
 <script>
-export default{
+export default {
   data() {
     return {
       currentDish: {},
@@ -108,36 +195,163 @@ export default{
       showTags: false,
       selectedTags: [],
       allTags: ["asian", "poultry", "spicy", "indian", "healthy", "salads"],
-      dishes: [
-        
-      ],
+      dishes: [],
       showDetails: false,
+      currentUser: {},
+      showNewUserPopup: true,
+      showHardRequirements: true,
+      showPreferences: false,
+      userId: "",
+      hardRequirements: {
+        vegan: false,
+        vegetarian: false,
+        alcohol_free: false,
+        mustard_free: false,
+        lactose_free: false,
+        egg_free: false,
+        pork_free: false,
+        wheat_free: false,
+        soy_free: false,
+        mild: false,
+        eco_friendly: false,
+        gluten_free: false,
+        nut_free: false,
+      },
+      preferences: {
+        asian: false,
+        indian: false,
+        italian: false,
+        burgers: false,
+        thai: false,
+        vietnamese: false,
+      },
     };
   },
   created() {
     this.getRecipes();
+    // check LocalStorage to see if there is a user set
+    if (!localStorage.getItem("userId")) {
+      // Call the user creation API if not
+      this.createUser();
+    } else {
+      this.showNewUserPopup = false;
+      this.userId = this.getUserId();
+    }
   },
   methods: {
+    createUser() {
+      const apiUrl = "http://localhost:8080/user"; // Your API endpoint
+
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          this.userId = data; // Set the dishes to the data received from the API
+          localStorage.setItem('userId', this.userId);
+          console.log("New user created with id: " + this.userId);
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
+    },
+    getUserId() {
+      this.userId = localStorage.getItem("userId");
+    },
+    toggleRequirement(key) {
+      this.hardRequirements[key] = !this.hardRequirements[key];
+      console.log(key + " - " + this.hardRequirements[key]);
+    },
+    moveToPreferences() {
+      this.showHardRequirements = false;
+      this.showPreferences = true;
+    },
+    togglePreference(key) {
+      this.preferences[key] = !this.preferences[key];
+      console.log(key + " - " + this.preferences[key]);
+    },
+    closeModal() {
+      this.showNewUserPopup = false;
+      this.setHardRequirements(this.hardRequirements);
+      this.setPreferences(this.preferences);
+    },
+    setHardRequirements(hardReqs) {
+      const apiUrl = "http://localhost:8080/user/:" + this.userId + "/requirements"; // Your API endpoint
+
+      fetch(apiUrl, {
+        method: 'PUT', // or 'PATCH' if you're only partially updating the resource
+        headers: {
+          'Content-Type': 'application/json',
+          // Include other headers as needed, like authorization tokens
+        },
+        body: JSON.stringify({ hardRequirements: hardReqs }) // Send the hardRequirements as JSON
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok: ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Handle the successful response here
+        console.log('Hard requirements updated:', data);
+      })
+      .catch(error => {
+        // Handle any errors here
+        console.error('There was a problem with the update API:', error);
+      });
+    },
+    setPreferences(prefs) {
+      const apiUrl = "http://localhost:8080/user/:" + this.userId + "/preferences"; // Your API endpoint
+
+      fetch(apiUrl, {
+        method: 'PUT', // or 'PATCH' if you're only partially updating the resource
+        headers: {
+          'Content-Type': 'application/json',
+          // Include other headers as needed, like authorization tokens
+        },
+        body: JSON.stringify({ preferences: prefs }) // Send the hardRequirements as JSON
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok: ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Handle the successful response here
+        console.log('Preferences updated:', data);
+      })
+      .catch(error => {
+        // Handle any errors here
+        console.error('There was a problem with the update API:', error);
+      });
+    },
     filterList() {
       if (this.searchQuery === "" && this.selectedTags.length === 0) {
         this.filteredDishes = this.dishes;
       }
-      if(
-        this.selectedTags.length === 0) {
+      if (this.selectedTags.length === 0) {
         this.filteredDishes = this.dishes.filter((dish) =>
-        dish.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+          dish.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
       } else {
         // General Filter and then filter that list with tags
         this.filteredDishes = this.dishes.filter((dish) =>
-        dish.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+          dish.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
         console.log(this.filteredDishes);
-        this.filteredDishes = this.filteredDishes.filter(dish =>
-          this.selectedTags.some(tag =>
-            dish.tags.map(dishTag => dishTag.toLowerCase()).includes(tag.toLowerCase())
+        this.filteredDishes = this.filteredDishes.filter((dish) =>
+          this.selectedTags.some((tag) =>
+            dish.tags
+              .map((dishTag) => dishTag.toLowerCase())
+              .includes(tag.toLowerCase())
           )
         );
       }
-      
     },
     toggleDropdown() {
       this.showTags = !this.showTags;
@@ -145,34 +359,32 @@ export default{
     updateSelectedTags(event) {
       // Clear the array without losing reactivity
       this.selectedTags = [];
-      if(event.target.value !== "") {
+      if (event.target.value !== "") {
         this.selectedTags = Array.from(event.target.options)
-                             .filter(option => option.selected)
-                             .map(option => option.value);
+          .filter((option) => option.selected)
+          .map((option) => option.value);
         this.filterList(this.searchQuery);
-      }
-      else {
+      } else {
         this.filterList(this.searchQuery);
       }
     },
     getRecipes() {
-      const apiUrl = 'http://localhost:8080/recipes'; // Your API endpoint
+      const apiUrl = "http://localhost:8080/recipes"; // Your API endpoint
 
       fetch(apiUrl)
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
           }
           return response.json();
         })
-        .then(data => {
+        .then((data) => {
           this.dishes = data; // Set the dishes to the data received from the API
           this.filteredDishes = data;
           console.log(this.filteredDishes);
-
         })
-        .catch(error => {
-          console.error('There was a problem with the fetch operation:', error);
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
         });
     },
     setDishId(currentId) {
@@ -181,35 +393,36 @@ export default{
     getRecipe(recipeId) {
       console.log("getRecipe Called");
       this.dishLoading = true;
-      const apiUrl = 'http://localhost:8080/recipe/' + recipeId;
+      const apiUrl = "http://localhost:8080/recipe/" + recipeId;
 
       fetch(apiUrl)
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
           }
           console.log(recipeId);
           return response.json();
         })
-        .then(data => {
+        .then((data) => {
           console.log(recipeId);
           this.selectedDish = data;
           this.dishLoading = false;
           console.log(this.selectedDish);
           console.log(this.dishLoading);
         })
-        .catch(error => {
-          this.error = 'There was a problem with the fetch operation: ' + error.message;
+        .catch((error) => {
+          this.error =
+            "There was a problem with the fetch operation: " + error.message;
           this.dishLoading = false;
         });
+    },
+    selectDish(recipeId) {
+      this.showDetails = true;
+      console.log(recipeId);
+      this.getRecipe(recipeId);
+    },
   },
-  selectDish(recipeId) {
-    this.showDetails = true;
-    console.log(recipeId);
-    this.getRecipe(recipeId);
-  }
-  }
-}
+};
 </script>
 
 <style>
