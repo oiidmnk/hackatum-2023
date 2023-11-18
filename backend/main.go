@@ -1,13 +1,13 @@
 package main
 
 import (
+	"backend/database"
+	"backend/utils"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
-
-	"backend/database"
-	"backend/utils"
+	"strconv"
 )
 
 var (
@@ -62,17 +62,17 @@ func getTags(ctx *gin.Context) {
 }
 
 func getRecipe(ctx *gin.Context) {
-	id := ctx.GetInt("id")
+	id, _ := strconv.ParseInt(ctx.Param("id"), 10, 32)
 	ctx.JSON(http.StatusOK, recipes[id])
 }
 
 func getUser(ctx *gin.Context) {
-	id := ctx.GetInt("id")
-	if id >= len(users) {
+	id, _ := strconv.ParseInt(ctx.Param("id"), 10, 32)
+	if int(id) >= len(users) {
 		ctx.JSON(http.StatusNotFound, nil)
 		return
 	}
-	ctx.JSON(http.StatusOK, id)
+	ctx.JSON(http.StatusOK, int(id))
 }
 
 func getNewUserId(ctx *gin.Context) {
