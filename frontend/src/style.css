@@ -1,6 +1,6 @@
 .tags {
     background-color: rgb(210, 249, 150);
-    color: white;
+    color: black;
     display: inline-block !important;
-    padding: 2px 4px;
+    padding: 2px 8px;
 }
