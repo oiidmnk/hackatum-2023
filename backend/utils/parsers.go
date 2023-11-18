@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"slices"
 
 	"backend/database"
 )
@@ -56,4 +57,27 @@ func ConvertRecipesToShortRecipes(recipes []*database.RecipeWithProperties) []*d
 		})
 	}
 	return shortRecipes
+}
+
+// gets a user, recipe list. filters recipe list to work with user
+func FilterRecipesByTags(recipes []*database.RecipeWithProperties, user *database.User) []*database.RecipeWithProperties {
+	filteredRecipes := make([]*database.RecipeWithProperties, len(recipes))
+	slices.DeleteFunc(filteredRecipes, func(rwp *database.RecipeWithProperties) bool {
+		ret := false
+		ret = ret || (!rwp.Properties.AlcoholFree && user.HardRequirements.AlcoholFree)
+		ret = ret || (!rwp.Properties.EcoFriendly && user.HardRequirements.EcoFriendly)
+		ret = ret || (!rwp.Properties.EggFree && user.HardRequirements.EggFree)
+		ret = ret || (!rwp.Properties.GlutenFree && user.HardRequirements.GlutenFree)
+		ret = ret || (!rwp.Properties.LactoseFree && user.HardRequirements.LactoseFree)
+		ret = ret || (!rwp.Properties.Mild && user.HardRequirements.Mild)
+		ret = ret || (!rwp.Properties.MustardFree && user.HardRequirements.MustardFree)
+		ret = ret || (!rwp.Properties.NutFree && user.HardRequirements.NutFree)
+		ret = ret || (!rwp.Properties.PorkFree && user.HardRequirements.PorkFree)
+		ret = ret || (!rwp.Properties.SoyFree && user.HardRequirements.SoyFree)
+		ret = ret || (!rwp.Properties.Vegan && user.HardRequirements.Vegan)
+		ret = ret || (!rwp.Properties.Vegetarian && user.HardRequirements.Vegetarian)
+		ret = ret || (!rwp.Properties.WheatFree && user.HardRequirements.WheatFree)
+		return ret
+	})
+	return filteredRecipes
 }
