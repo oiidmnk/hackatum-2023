@@ -76,6 +76,25 @@ const app = Vue.createApp({
       else {
         this.filterList(this.searchQuery);
       }
+    },
+    getRecipes() {
+      const apiUrl = 'http://localhost:8080/recipes'; // Replace with the actual API URL
+  
+      fetch(apiUrl, { mode: 'no-cors' })
+        .then(response => {
+          // Check if the request was successful
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.json(); // Parse JSON response body
+        })
+        .then(data => {
+          //this.recipes = data; // Set the fetched data to the recipes array
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
     }
   },
 });
