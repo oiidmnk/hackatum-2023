@@ -50,6 +50,7 @@ func ConvertRecipesToShortRecipes(recipes []*database.RecipeWithProperties) []*d
 		shortRecipes = append(shortRecipes, &database.RecipeShort{
 			Id:     recipe.Id,
 			Name:   recipe.Name,
+			Image:  recipe.Image,
 			Rating: uint32(recipe.Rating),
 			Tags:   recipe.Tags,
 		})
