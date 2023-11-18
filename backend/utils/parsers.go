@@ -40,3 +40,19 @@ func AssignIdIngredients(ingredients []*database.Ingredient) {
 		ingredient.Id = uint32(id)
 	}
 }
+
+func ConvertRecipesToShortRecipes(recipes []*database.Recipe) []*database.RecipeShort {
+	if len(recipes) == 0 {
+		return nil
+	}
+	shortRecipes := make([]*database.RecipeShort, 0, len(recipes))
+	for _, recipe := range recipes {
+		shortRecipes = append(shortRecipes, &database.RecipeShort{
+			Id:     recipe.Id,
+			Name:   recipe.Name,
+			Rating: uint32(recipe.Rating),
+			Tags:   recipe.Tags,
+		})
+	}
+	return shortRecipes
+}
