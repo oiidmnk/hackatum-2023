@@ -26,6 +26,405 @@
     "description": "A delicious and moist vegan chocolate cake for all to enjoy.",
     "image": "https://example.com/images/vegan-chocolate-cake.jpg",
     "rating": 5,
-    "tags": ["asian", "indian", "healthy", "spicy"]
+    "tags": [
+      "asian",
+      "indian",
+      "healthy",
+      "spicy"
+    ]
+  },
+  {
+    "name": "Mediterranean Quinoa Salad",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 15,
+      "region": [
+        "Mediterranean"
+      ],
+      "cooking_level": 1
+    },
+    "description": "A refreshing salad with quinoa, fresh vegetables, and a zesty lemon dressing.",
+    "image": "https://example.com/images/mediterranean-quinoa-salad.jpg",
+    "rating": 4,
+    "tags": [
+      "salad",
+      "light",
+      "refreshing"
+    ]
+  },
+  {
+    "name": "Classic Beef Stew",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": false,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": false,
+      "gluten_free": false,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 180,
+      "region": [
+        "French"
+      ],
+      "cooking_level": 3
+    },
+    "description": "A hearty stew made with tender chunks of beef, potatoes, and carrots in a rich gravy.",
+    "image": "https://example.com/images/classic-beef-stew.jpg",
+    "rating": 5,
+    "tags": [
+      "hearty",
+      "warm",
+      "comfort"
+    ]
+  },
+  {
+    "name": "Spicy Thai Green Curry",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": false,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": false
+    },
+    "recipe_properties": {
+      "cooking_time": 30,
+      "region": [
+        "Thai"
+      ],
+      "cooking_level": 2
+    },
+    "description": "A vibrant green curry with chicken, bamboo shoots, and bell peppers, infused with coconut milk.",
+    "image": "https://example.com/images/spicy-thai-green-curry.jpg",
+    "rating": 4,
+    "tags": [
+      "spicy",
+      "aromatic",
+      "exotic"
+    ]
+  },
+  {
+    "name": "Roasted Vegetable Pasta",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": false,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 45,
+      "region": [
+        "Italian"
+      ],
+      "cooking_level": 1
+    },
+    "description": "Whole wheat pasta tossed with a medley of roasted vegetables and a sprinkle of parmesan.",
+    "image": "https://example.com/images/roasted-vegetable-pasta.jpg",
+    "rating": 4,
+    "tags": [
+      "vegetarian",
+      "roasted",
+      "hearty"
+    ]
+  },
+  {
+    "name": "Sushi Platter",
+    "properties": {
+      "vegan": false,
+      "vegetarian": false,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": false,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 60,
+      "region": [
+        "Japanese"
+      ],
+      "cooking_level": 3
+    },
+    "description": "An assortment of fresh sushi, including nigiri, sashimi, and rolls, with accompaniments.",
+    "image": "https://example.com/images/sushi-platter.jpg",
+    "rating": 5,
+    "tags": [
+      "delicate",
+      "fresh",
+      "traditional"
+    ]
+  },
+  {
+    "name": "Grilled Portobello Mushrooms",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 30,
+      "region": [
+        "American"
+      ],
+      "cooking_level": 1
+    },
+    "description": "Juicy portobello mushrooms marinated and grilled to perfection.",
+    "image": "https://example.com/images/grilled-portobello-mushrooms.jpg",
+    "rating": 4.5,
+    "tags": [
+      "grill",
+      "mushrooms",
+      "simple",
+      "vegan"
+    ]
+  },
+  {
+    "name": "Spicy Lentil Soup",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 50,
+      "region": [
+        "Middle Eastern"
+      ],
+      "cooking_level": 2
+    },
+    "description": "A hearty soup with a kick, featuring lentils and a blend of spices.",
+    "image": "https://example.com/images/spicy-lentil-soup.jpg",
+    "rating": 4,
+    "tags": [
+      "soup",
+      "lentils",
+      "spicy",
+      "comfort"
+    ]
+  },
+  {
+    "name": "Herb-Crusted Tofu Steak",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": false,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 20,
+      "region": [
+        "European"
+      ],
+      "cooking_level": 1
+    },
+    "description": "Savory tofu steaks coated in a fragrant blend of herbs and spices.",
+    "image": "https://example.com/images/herb-crusted-tofu-steak.jpg",
+    "rating": 4,
+    "tags": [
+      "main course",
+      "tofu",
+      "herbs",
+      "vegan"
+    ]
+  },
+  {
+    "name": "Cauliflower Buffalo Wings",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": false,
+      "soy_free": false,
+      "mild": false,
+      "eco_friendly": true,
+      "gluten_free": false,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 40,
+      "region": [
+        "American"
+      ],
+      "cooking_level": 2
+    },
+    "description": "Crispy baked cauliflower pieces coated in spicy buffalo sauce.",
+    "image": "https://example.com/images/cauliflower-buffalo-wings.jpg",
+    "rating": 4.5,
+    "tags": [
+      "appetizer",
+      "spicy",
+      "cauliflower",
+      "vegan"
+    ]
+  },
+  {
+    "name": "Avocado Chocolate Mousse",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": false
+    },
+    "recipe_properties": {
+      "cooking_time": 15,
+      "region": [
+        "French"
+      ],
+      "cooking_level": 1
+    },
+    "description": "A rich and creamy chocolate mousse made with ripe avocados.",
+    "image": "https://example.com/images/avocado-chocolate-mousse.jpg",
+    "rating": 5,
+    "tags": [
+      "dessert",
+      "chocolate",
+      "avocado",
+      "healthy"
+    ]
+  },
+  {
+    "name": "Zucchini Noodles with Pesto",
+    "properties": {
+      "vegan": false,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": false,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": false
+    },
+    "recipe_properties": {
+      "cooking_time": 20,
+      "region": [
+        "Italian"
+      ],
+      "cooking_level": 1
+    },
+    "description": "Spiralized zucchini noodles tossed in a homemade pesto sauce.",
+    "image": "https://example.com/images/zucchini-noodles-with-pesto.jpg",
+    "rating": 4,
+    "tags": [
+      "main course",
+      "vegetarian",
+      "zucchini",
+      "pesto"
+    ]
+  },
+  {
+    "name": "Lentil and Beetroot Salad",
+    "properties": {
+      "vegan": true,
+      "vegetarian": true,
+      "alcohol_free": true,
+      "mustard_free": true,
+      "lactose_free": true,
+      "egg_free": true,
+      "pork_free": true,
+      "wheat_free": true,
+      "soy_free": true,
+      "mild": true,
+      "eco_friendly": true,
+      "gluten_free": true,
+      "nut_free": true
+    },
+    "recipe_properties": {
+      "cooking_time": 30,
+      "region": [
+        "Mediterranean"
+      ],
+      "cooking_level": 1
+    }
   }
 ]
