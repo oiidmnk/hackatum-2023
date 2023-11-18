@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"backend/database/tags"
 	"fmt"
 	"log"
 	"slices"
@@ -67,4 +68,49 @@ func ingredientsToProperties(ingredientNames []string, allIngredients []*databas
 		}
 	}
 	return property
+}
+
+func AddTagsToRecipes(recipes []*database.RecipeWithProperties) {
+	for _, recipe := range recipes {
+		recipe.Tags = append(recipe.Tags, getTags(recipe.Properties)...)
+	}
+}
+
+func getTags(properties database.Properties) []string {
+	ret := make([]string, 0)
+
+	if properties.Vegan {
+		ret = append(ret, tags.VEGAN)
+	}
+	if properties.Vegetarian {
+		ret = append(ret, tags.VEGETARIAN)
+	}
+	if properties.GlutenFree {
+		ret = append(ret, tags.GLUTENFREE)
+	}
+	if !properties.Mild {
+		ret = append(ret, tags.SPICY)
+	}
+
+	return ret
+}
+
+func GetTags(recipes []*database.RecipeWithProperties) []string {
+	ret := make(map[string]bool, 0)
+
+	for _, recipe := range recipes {
+		for _, tag := range recipe.Tags {
+			ret[tag] = true
+		}
+	}
+
+	keys := make([]string, len(ret))
+
+	i := 0
+	for k := range ret {
+		keys[i] = k
+		i++
+	}
+
+	return keys
 }
