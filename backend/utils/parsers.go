@@ -63,7 +63,9 @@ func ConvertRecipesToShortRecipes(recipes []*database.RecipeWithProperties) []*d
 }
 
 func FilterRecipesByTags(recipes []*database.RecipeWithProperties, user *database.User) []*database.RecipeWithProperties {
-	return slices.DeleteFunc(recipes, func(rwp *database.RecipeWithProperties) bool {
+	retRecipes := make([]*database.RecipeWithProperties, len(recipes))
+	copy(retRecipes, recipes)
+	return slices.DeleteFunc(retRecipes, func(rwp *database.RecipeWithProperties) bool {
 		ret := false
 		ret = ret || (!rwp.Properties.AlcoholFree && user.HardRequirements.AlcoholFree)
 		ret = ret || (!rwp.Properties.EcoFriendly && user.HardRequirements.EcoFriendly)
