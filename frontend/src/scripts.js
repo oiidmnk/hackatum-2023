@@ -78,23 +78,25 @@ const app = Vue.createApp({
       }
     },
     getRecipes() {
-      const apiUrl = 'http://localhost:8080/recipes'; // Replace with the actual API URL
+      const apiUrl = 'http://localhost:8080/api/test'; // Replace with the actual API URL
   
-      fetch(apiUrl, { mode: 'no-cors' })
-        .then(response => {
-          // Check if the request was successful
-          if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-          }
-          return response.json(); // Parse JSON response body
-        })
-        .then(data => {
-          //this.recipes = data; // Set the fetched data to the recipes array
-          console.log(data);
-        })
-        .catch(error => {
-          console.error('There was a problem with the fetch operation:', error);
-        });
+      fetch(apiUrl)
+  .then(response => {
+    console.log("test");
+    if (!response.ok) {
+      // Make sure this error is thrown only when response.ok is false
+      throw new Error('Network response was not ok: ' + response.statusText);
+    }
+    return response.json(); // This line should only execute if response is ok
+  })
+  .then(data => {
+    // this.recipes = data; // Make sure this line is executing
+    alert("reached");
+  })
+  .catch(error => {
+    // If this is logging the error, ensure it's not a false positive
+    console.error('There was a problem with the fetch operation:', error);
+  });
     }
   },
 });
