@@ -182,6 +182,8 @@
                     <br />
                     <h3 class="text-lg">{{ selectedDish.Description }}</h3>
                     <br />
+                    <p>Recipe:</p><br>
+                    <p>{{ selectedDish.CookingInstructions }}</p> <br>
                     <h3>Properties: {{ selectedDish.Properties }}</h3>
                     <br />
                     <h3>Tags: {{ selectedDish.Tags }}</h3>
@@ -255,8 +257,6 @@ export default {
     };
   },
   created() {
-    this.getRecipes();
-    this.getTags();
     // check LocalStorage to see if there is a user set
     if (!localStorage.getItem("userId")) {
       // Call the user creation API if not
@@ -265,6 +265,8 @@ export default {
       this.showNewUserPopup = false;
       this.userId = this.getUserId();
     }
+    this.getRecipes();
+    this.getTags();
   },
   methods: {
     createUser() {
@@ -422,7 +424,7 @@ export default {
         });
     },
     getRecipes() {
-      const apiUrl = "http://localhost:8080/recipes"; // Your API endpoint
+      const apiUrl = "http://localhost:8080/recipes/" + this.userId; // Your API endpoint
 
       fetch(apiUrl)
         .then((response) => {
@@ -446,7 +448,7 @@ export default {
     getRecipe(recipeId) {
       console.log("getRecipe Called");
       this.dishLoading = true;
-      const apiUrl = "http://localhost:8080/recipe/" + recipeId;
+      const apiUrl = "http://localhost:8080/recipe/" + recipeId + "/" + this.userId;
 
       fetch(apiUrl)
         .then((response) => {
