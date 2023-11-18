@@ -1,13 +1,13 @@
 package main
 
 import (
+	"backend/database"
+	"backend/utils"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
-
-	"backend/database"
-	"backend/utils"
+	"strconv"
 )
 
 var (
@@ -21,6 +21,7 @@ var (
 func main() {
 	utils.OpenAndUnmarshal("database/users.json", any(&users))
 	utils.AssignIdUsers(users)
+	utils.SetUserPreferences(users, tags)
 	utils.OpenAndUnmarshal("database/ingredients.json", any(&ingredients))
 	utils.AssignIdIngredients(ingredients)
 	var recipesTemp []*database.Recipe
@@ -37,9 +38,9 @@ func main() {
 	router.GET("/tags", getTags)
 	router.GET("/recipe/:id", getRecipe)
 	router.GET("/image/:path", getImage)
+	router.GET("/user/:id", getUser)
+	router.GET("/user", getNewUserId)
 	log.Fatal(router.Run(":8080"))
-
-	return
 }
 
 func getRecipes(ctx *gin.Context) {
@@ -61,8 +62,27 @@ func getTags(ctx *gin.Context) {
 }
 
 func getRecipe(ctx *gin.Context) {
-	id := ctx.GetInt("id")
+	id, _ := strconv.ParseInt(ctx.Param("id"), 10, 32)
 	ctx.JSON(http.StatusOK, recipes[id])
+}
+
+func getUser(ctx *gin.Context) {
+	id, _ := strconv.ParseInt(ctx.Param("id"), 10, 32)
+	if int(id) >= len(users) {
+		ctx.JSON(http.StatusNotFound, nil)
+		return
+	}
+	ctx.JSON(http.StatusOK, int(id))
+}
+
+func getNewUserId(ctx *gin.Context) {
+	id := uint32(len(users))
+	users = append(users, &database.User{
+		Id:               id,
+		HardRequirements: database.Properties{},
+		Preferences:      utils.CreatePreferences(nil, tags),
+	})
+	ctx.JSON(http.StatusOK, id)
 }
 
 func CORSMiddleware() gin.HandlerFunc {

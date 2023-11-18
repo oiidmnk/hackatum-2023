@@ -2,7 +2,6 @@ package database
 
 type User struct {
 	Id               uint32
-	Name             string            `json:"name"`
 	HardRequirements Properties        `json:"hard_requirements"`
 	Preferences      map[string]uint32 `json:"preferences"`
 }
