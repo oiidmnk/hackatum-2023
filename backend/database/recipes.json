@@ -10,7 +10,6 @@
     "rating": 4,
     "tags": [
       "French",
-      "Vegetarian",
       "Stew",
       "Hearty"
     ],
@@ -23,7 +22,7 @@
       "Garlic",
       "Herbes de Provence"
     ],
-    "cooking_instructions": "Saut\u00e9 vegetables separately, layer in a pot, cover with tomato sauce, and simmer."
+    "cooking_instructions": "Prepare vegetables by slicing them into uniform pieces.\nSauté each type separately in olive oil until tender.\nLayer the vegetables in a pot, then cover with herbed tomato sauce.\nSimmer gently with the pot covered, stirring occasionally.\nCook until everything is tender.\nServe the ratatouille warm, with bread or as a side."
   },
   {
     "name": "Indian Butter Chicken",
@@ -37,7 +36,6 @@
     "tags": [
       "Indian",
       "Curry",
-      "Spicy",
       "Rich"
     ],
     "ingredients": [
@@ -51,7 +49,7 @@
       "Garlic",
       "Ginger"
     ],
-    "cooking_instructions": "Marinate and grill chicken. Cook onion, garlic, ginger, spices, and tomato. Add chicken and cream."
+    "cooking_instructions": "Marinate chicken in yogurt and spices, then grill until charred.\nSauté onions, garlic, ginger, and spices in ghee until golden.\nAdd tomato puree to the spices and simmer into a thick gravy.\nIntroduce the grilled chicken to the sauce, then stir in cream.\nCook until the curry is rich and flavorful.\nServe hot, garnished with cilantro, with naan or rice."
   },
   {
     "name": "Mexican Tacos al Pastor",
@@ -65,7 +63,6 @@
     "tags": [
       "Mexican",
       "Street Food",
-      "Spicy",
       "Flavorful"
     ],
     "ingredients": [
@@ -77,7 +74,7 @@
       "Cilantro",
       "Corn tortillas"
     ],
-    "cooking_instructions": "Marinate pork, roast with pineapple, chop, and serve on tortillas with toppings."
+    "cooking_instructions": "Slice pork thinly and marinate in a blend of chilies, spices, and pineapple.\nGrill the marinated pork until charred and tender.\nWarm corn tortillas on the grill for a slight crisp.\nAssemble tacos with pork, diced onion, cilantro, and a squeeze of lime.\nServe with a side of spicy salsa for an added kick."
   },
   {
     "name": "Classic Margherita Pizza",
@@ -90,8 +87,7 @@
     "rating": 5,
     "tags": [
       "italian",
-      "european",
-      "vegetarian"
+      "european"
     ],
     "ingredients": [
       "Pizza dough",
@@ -101,7 +97,7 @@
       "Extra virgin olive oil",
       "Salt"
     ],
-    "cooking_instructions": "Stretch out the dough, apply sauce, add cheese and basil, drizzle with oil, season, and bake in a preheated oven at the highest temperature until crust is golden and cheese is bubbly."
+    "cooking_instructions": "Spread a thin layer of homemade tomato sauce onto rolled-out pizza dough.\nSprinkle with fresh mozzarella and basil leaves.\nDrizzle with olive oil and season with salt and pepper.\nBake in a preheated oven at the highest temperature until the crust is golden and cheese bubbles.\nSlice and serve hot, with a drizzle of extra virgin olive oil, if desired."
   },
   {
     "name": "Beef Bourguignon",
@@ -128,7 +124,7 @@
       "olive oil",
       "flour"
     ],
-    "cooking_instructions": "Brown the beef and bacon in olive oil. Remove and set aside. In the same pot, cook the onion and carrots. Sprinkle flour, cook for a minute. Add wine, stock, garlic, and bouquet garni. Return beef and bacon to pot. Simmer for 2 hours. Sauté mushrooms and pearl onions separately and add to the stew. Cook for another 30 minutes. Season with salt and pepper. Serve with crusty bread."
+    "cooking_instructions": "Brown chunks of beef in hot oil and set aside.\nIn the same pan, cook bacon and set aside, leaving the fat.\nSauté onions, carrots, and garlic in the bacon fat.\nDeglaze the pan with red wine, then return the beef and bacon to the pan.\nAdd beef stock and herbs, and simmer slowly until the beef is tender.\nServe with crusty bread or over mashed potatoes."
   },
   {
     "name": "Roasted Vegetable Medley",
@@ -140,8 +136,6 @@
     "image": "image/roasted-vegetable-medley.jpg",
     "rating": 4,
     "tags": [
-      "vegetarian",
-      "vegan",
       "healthy",
       "roasted"
     ],
@@ -157,7 +151,7 @@
       "Salt",
       "Black pepper"
     ],
-    "cooking_instructions": "Chop the vegetables into even pieces. Toss with olive oil, minced garlic, salt, pepper, and Italian herbs. Spread on a baking sheet. Roast in a preheated oven until vegetables are tender and slightly caramelized. Serve warm as a side dish or over rice for a main course."
+    "cooking_instructions": "Chop a variety of vegetables, such as zucchini, peppers, carrots, and onions.\nToss with olive oil, salt, pepper, and your choice of herbs.\nSpread the vegetables in a single layer on a baking sheet.\nRoast in a preheated oven until they are tender and edges are caramelized.\nServe warm as a side dish or as a healthy main course."
   },
   {
     "name": "Chicken Tikka Masala",
@@ -171,7 +165,6 @@
     "tags": [
       "indian",
       "asian",
-      "spicy",
       "comfort"
     ],
     "ingredients": [
@@ -218,7 +211,7 @@
       "Olive oil",
       "Black pepper"
     ],
-    "cooking_instructions": "Whisk together egg yolks, lemon juice, finely chopped anchovies, garlic, Dijon mustard, and Worcestershire sauce. Gradually blend in olive oil to make a creamy dressing. Toss romaine lettuce with the dressing, add croutons and shaved Parmesan cheese. Season with black pepper and serve immediately."
+    "cooking_instructions": "Toss chopped romaine lettuce with a homemade Caesar dressing.\nAdd croutons and grate fresh Parmesan cheese over the top.\nFor an authentic touch, sprinkle with anchovies.\nServe chilled, ideally as a starter or light main course."
   },
   {
     "name": "Lemon Herb Grilled Salmon",
@@ -245,7 +238,7 @@
       "Salt",
       "Black pepper"
     ],
-    "cooking_instructions": "Combine lemon zest, lemon juice, chopped dill, parsley, minced garlic, olive oil, salt, and pepper to create a marinade. Coat the salmon and let it marinate. Grill the salmon to desired doneness. Serve with extra lemon wedges and a sprinkle of fresh herbs."
+    "cooking_instructions": "Combine lemon zest, lemon juice, chopped dill, parsley, minced garlic, olive oil, salt, and pepper to create a marinade.\n Coat the salmon and let it marinate. Grill the salmon to desired doneness. Serve with extra lemon wedges and a sprinkle of fresh herbs."
   },
   {
     "name": "Quinoa and Black Bean Salad",
@@ -257,8 +250,6 @@
     "image": "image/quinoa-black-bean-salad.jpg",
     "rating": 4,
     "tags": [
-      "vegetarian",
-      "vegan",
       "salad",
       "healthy"
     ],
@@ -276,7 +267,7 @@
       "Salt",
       "Black pepper"
     ],
-    "cooking_instructions": "Cook quinoa according to package instructions and let it cool. Rinse and drain black beans. Dice the bell pepper and avocado. Chop cilantro. Whisk together lime juice, olive oil, cumin, chili powder, salt, and pepper to make the dressing. Toss all ingredients with the dressing and serve chilled or at room temperature."
+    "cooking_instructions": "Cook quinoa according to package instructions and let it cool. Rinse and drain black beans. Dice the bell pepper and avocado. Chop cilantro. Whisk together lime juice, olive oil, cumin, chili powder, salt, and pepper to make the dressing.\n Toss all ingredients with the dressing and serve chilled or at room temperature."
   },
   {
     "name": "Pan-Seared Duck Breast",
@@ -304,7 +295,7 @@
       "Salt",
       "Black Pepper"
     ],
-    "cooking_instructions": "Score the duck skin, season with salt and pepper, and sear on the skin side down until crisp. Flip and cook to desired doneness. For the sauce, caramelize sugar, deglaze with vinegar, add orange juice, zest, stock, and reduce. Finish with a splash of cognac and swirl in butter. Serve the sliced duck with the orange sauce."
+    "cooking_instructions": "Score the duck skin, season with salt and pepper, and sear on the skin side down until crisp. Flip and cook to desired doneness. For the sauce, caramelize sugar, deglaze with vinegar, add orange juice, zest, stock, and reduce.\n Finish with a splash of cognac and swirl in butter. Serve the sliced duck with the orange sauce."
   },
   {
     "name": "Spinach and Ricotta Stuffed Shells",
@@ -317,7 +308,6 @@
     "rating": 4,
     "tags": [
       "italian",
-      "vegetarian",
       "baked"
     ],
     "ingredients": [
@@ -333,7 +323,7 @@
       "Salt",
       "Black pepper"
     ],
-    "cooking_instructions": "Boil pasta shells until al dente. Mix ricotta, cooked spinach, egg, and Parmesan. Fill each shell with the mixture, place in a baking dish, cover with tomato sauce and mozzarella. Bake until bubbly and golden on top."
+    "cooking_instructions": "Boil large pasta shells until al dente.\nMix cooked spinach with ricotta, Parmesan, egg, salt, and pepper.\nStuff the mixture into the shells.\nPlace in a baking dish, cover with marinara sauce, and bake until bubbly."
   },
   {
     "name": "Spicy Thai Basil Chicken",
@@ -346,8 +336,7 @@
     "rating": 5,
     "tags": [
       "thai",
-      "asian",
-      "spicy"
+      "asian"
     ],
     "ingredients": [
       "Ground chicken",
@@ -360,7 +349,7 @@
       "Brown sugar",
       "Jasmine rice"
     ],
-    "cooking_instructions": "Stir-fry garlic and chilies, add chicken until browned. Mix in soy, oyster, and fish sauces with sugar, cook until caramelized. Stir in basil leaves until wilted. Serve over cooked jasmine rice."
+    "cooking_instructions": "Sauté minced chicken in a hot pan with oil.\nAdd finely chopped garlic and fresh chilies to the mix.\nSeason with a splash of soy sauce and a dash of fish sauce for umami depth.\nOnce the chicken is cooked, toss in a generous handful of Thai basil leaves until they just wilt.\nServe the dish hot, accompanied by steamed jasmine rice for a complete meal."
   },
   {
     "name": "Maple Glazed Carrots",
@@ -372,7 +361,6 @@
     "image": "image/maple-glazed-carrots.jpg",
     "rating": 4,
     "tags": [
-      "vegetarian",
       "side dish",
       "sweet"
     ],
@@ -384,7 +372,7 @@
       "Black Pepper",
       "Fresh thyme"
     ],
-    "cooking_instructions": "Cook carrots in boiling water until tender. Drain and sauté with butter, maple syrup, salt, and pepper. Garnish with thyme before serving."
+    "cooking_instructions": "Slice carrots into batons and place them on a baking sheet.\nDrizzle with pure maple syrup and melted butter, tossing to coat evenly.\nSeason with salt, pepper, and a touch of cinnamon for warmth.\nRoast in a preheated oven until they are fork-tender and the edges are caramelized.\nGarnish with a sprinkle of fresh parsley before serving."
   },
   {
     "name": "Chocolate Lava Cake",
@@ -408,7 +396,7 @@
       "Flour",
       "Vanilla extract"
     ],
-    "cooking_instructions": "Melt chocolate and butter together. Whisk eggs and sugar, then fold in the chocolate mixture and flour. Pour into ramekins and bake until edges are firm but center is runny. Serve warm."
+    "cooking_instructions": "Whisk together melted dark chocolate and butter.\nBeat in eggs and sugar until pale, then fold in a sifted mixture of flour and cocoa powder.\nPour the batter into greased ramekins.\nBake just long enough so the edges are set but the center remains molten.\nServe immediately, with a dusting of powdered sugar or a scoop of vanilla ice cream on top."
   },
   {
     "name": "Creamy Mushroom Risotto",
@@ -438,7 +426,7 @@
       "Salt",
       "Black pepper"
     ],
-    "cooking_instructions": "Sauté onions, garlic, and mushrooms in olive oil. Add rice, toast slightly, then deglaze with wine. Gradually add stock, stirring continuously. Finish with butter, Parmesan, and thyme."
+    "cooking_instructions": "Sauté chopped onions in butter until translucent.\nAdd arborio rice and toast for a few minutes, then deglaze with white wine.\nSlowly add warm chicken or vegetable stock, one ladle at a time, stirring constantly.\nWhen the risotto is almost done, stir in sautéed mushrooms and finish with grated Parmesan cheese and a knob of butter for richness.\nServe warm, garnished with a sprinkle of chopped parsley and additional Parmesan if desired."
   },
   {
     "name": "Lamb Rogan Josh",
@@ -451,7 +439,6 @@
     "rating": 5,
     "tags": [
       "indian",
-      "spicy",
       "aromatic"
     ],
     "ingredients": [
@@ -472,7 +459,7 @@
       "Salt",
       "Vegetable oil"
     ],
-    "cooking_instructions": "Marinate lamb in yogurt and spices. Brown lamb in oil, set aside. Cook down tomatoes with remaining spices. Return lamb to pot, cover, and simmer until tender."
+    "cooking_instructions": "Season lamb pieces with salt and let sit.\nIn a pot, heat oil and brown the lamb, then set aside.\nIn the same pot, fry a mixture of ground spices—cardamom, cloves, cinnamon, and paprika.\nAdd chopped onions and tomatoes, cooking until soft.\nReturn the lamb to the pot with yogurt and water.\nSimmer until the lamb is tender and the sauce is rich.\nGarnish with fresh coriander and serve with naan or rice."
   },
   {
     "name": "Butternut Squash Soup",
@@ -484,7 +471,6 @@
     "image": "image/butternut-squash-soup.jpg",
     "rating": 4,
     "tags": [
-      "vegetarian",
       "soup",
       "autumn"
     ],
@@ -499,7 +485,7 @@
       "Salt",
       "Black pepper"
     ],
-    "cooking_instructions": "Roast butternut squash until tender. Sauté onion and garlic in butter. Blend squash with sautéed mixture and stock. Simmer, add cream, nutmeg, salt, and pepper."
+    "cooking_instructions": "Peel and cube butternut squash, and roast until soft.\nIn a pot, sauté onions, garlic, and ginger until fragrant.\nAdd the roasted squash, vegetable stock, and seasoning.\nSimmer, then blend until smooth.\nStir in a touch of cream and adjust the seasoning.\nServe hot, garnished with a swirl of cream and roasted pumpkin seeds."
   },
   {
     "name": "Fish and Chips",
@@ -527,7 +513,7 @@
       "Lemon wedges",
       "Tartar sauce"
     ],
-    "cooking_instructions": "Dip fish fillets in beer batter. Deep fry until golden. Cut potatoes into chips, fry until crispy. Serve with lemon wedges and tartar sauce."
+    "cooking_instructions": "Coat fish fillets in seasoned flour, then dip into a beer batter.\nDeep-fry in hot oil until golden and crispy.\nServe with thick-cut chips, also fried until golden.\nAccompany with tartar sauce and a wedge of lemon."
   },
   {
     "name": "Pumpkin Pie",
@@ -555,6 +541,6 @@
       "Cloves",
       "Salt"
     ],
-    "cooking_instructions": "Mix pumpkin puree with eggs, cream, sugar, and spices. Pour into pie crust. Bake until filling is set and crust is golden."
+    "cooking_instructions": "Mix pumpkin puree with eggs, sugar, and a blend of spices—cinnamon, nutmeg, ginger, and cloves.\nPour into a pie crust and bake until the filling is set but still slightly wobbly in the center.\nCool completely and serve with a dollop of whipped cream."
   }
 ]
