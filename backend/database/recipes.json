@@ -25,6 +25,7 @@
     },
     "description": "A delicious and moist vegan chocolate cake for all to enjoy.",
     "image": "https://example.com/images/vegan-chocolate-cake.jpg",
-    "rating": 5
+    "rating": 5,
+    "tags": ["asian", "indian", "healthy", "spicy"]
   }
 ]
