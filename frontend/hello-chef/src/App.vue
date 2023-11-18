@@ -1,6 +1,8 @@
 <template>
   <!DOCTYPE html>
   <html lang="en">
+   <!--Window-->
+   <div class="container flex flex-col min-h-screen min-w-full max-h-full">
     <!-- Header -->
     <div class="container h-20 min-w-full bg-green-800">
       <nav>
@@ -79,7 +81,7 @@
                 'focus:outline-none': true,
                 'focus:shadow-outline': true,
               }"
-              @click="toggleRequirement(key)"
+              @click="togglePreference(key)"
             >
               {{ key.replace("_", " ") }}
             </button>
@@ -137,7 +139,6 @@
     <div class="container flex flex-grow min-w-full">
       <!-- List -->
       <div class="container flex-grow w-2/6 bg-green-800 p-4">
-        <button @click="getRecipes">get recipes</button>
         <ul class="space-y-4">
           <li class="" v-for="dish in filteredDishes" :key="dish.id">
             <div
@@ -153,7 +154,11 @@
               </div>
               <div class="flex-grow flex flex-col justify-center px-2">
                 <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
-                <h4 class="text-sm">{{ dish.Tags }}</h4>
+                <div class="flex">
+                  <h4 v-for="tag in dish.Tags" :key="tag" class="text-sm">
+                    {{ tag }},
+                  </h4>
+                </div>
               </div>
             </div>
           </li>
@@ -166,21 +171,43 @@
           <!-- Image -->
           <div class="container h-40 bg-gray-400 min-w-full"></div>
           <!-- Recipe Info-->
-          <div class="container flex-grow min-w-full h-full">
-            <div v-if="showDetails">
-              <div v-if="dishLoading">Loading</div>
-              <div v-else>
-                <h1>{{ selectedDish.Id }}</h1>
-                <br />
-                <h3>Tags: {{ selectedDish.Tags }}</h3>
-                <p>{{ selectedDish.Description }}</p>
-                <br /><br />
+          <div class="flex">
+            <div class="container flex-grow min-w-full h-full">
+              <div v-if="showDetails" class="p-8 space-x-4">
+                <div v-if="dishLoading">Loading</div>
+                <div v-else class="flex text-left">
+                  <!-- General Info -->
+                  <div class="w-5/6 pr-16">
+                    <h1 class="font-bold text-xl">{{ selectedDish.Name }}</h1>
+                    <br />
+                    <h3 class="text-lg">{{ selectedDish.Description }}</h3>
+                    <br />
+                    <h3>Properties: {{ selectedDish.Properties }}</h3>
+                    <br />
+                    <h3>Tags: {{ selectedDish.Tags }}</h3>
+                    <br /><br />
+                  </div>
+                  <!-- Extra Properties -->
+                  <div class="text-right flex-grow">
+                    <p>
+                      Cooking Time:
+                      {{ selectedDish.RecipeProperties.cooking_time }}
+                    </p>
+                    <p>Region: {{ selectedDish.RecipeProperties.region }}</p>
+                    <p>
+                      Cooking Level:
+                      {{ selectedDish.RecipeProperties.cooking_level }}
+                    </p>
+                  </div>
+                </div>
               </div>
+              <div></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+   </div>
   </html>
 </template>
 
@@ -229,6 +256,7 @@ export default {
   },
   created() {
     this.getRecipes();
+    this.getTags();
     // check LocalStorage to see if there is a user set
     if (!localStorage.getItem("userId")) {
       // Call the user creation API if not
@@ -251,7 +279,7 @@ export default {
         })
         .then((data) => {
           this.userId = data; // Set the dishes to the data received from the API
-          localStorage.setItem('userId', this.userId);
+          localStorage.setItem("userId", this.userId);
           console.log("New user created with id: " + this.userId);
         })
         .catch((error) => {
@@ -279,56 +307,62 @@ export default {
       this.setPreferences(this.preferences);
     },
     setHardRequirements(hardReqs) {
-      const apiUrl = "http://localhost:8080/user/:" + this.userId + "/requirements"; // Your API endpoint
+      const apiUrl =
+        "http://localhost:8080/user/:" + this.userId + "/requirements"; // Your API endpoint
 
       fetch(apiUrl, {
-        method: 'PUT', // or 'PATCH' if you're only partially updating the resource
+        method: "PUT", // or 'PATCH' if you're only partially updating the resource
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           // Include other headers as needed, like authorization tokens
         },
-        body: JSON.stringify({ hardRequirements: hardReqs }) // Send the hardRequirements as JSON
+        body: JSON.stringify({ hardRequirements: hardReqs }), // Send the hardRequirements as JSON
       })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok: ' + response.statusText);
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Handle the successful response here
-        console.log('Hard requirements updated:', data);
-      })
-      .catch(error => {
-        // Handle any errors here
-        console.error('There was a problem with the update API:', error);
-      });
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok: " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Handle the successful response here
+          console.log("Hard requirements updated:", data);
+        })
+        .catch((error) => {
+          // Handle any errors here
+          console.error("There was a problem with the update API:", error);
+        });
     },
     setPreferences(prefs) {
-      const apiUrl = "http://localhost:8080/user/:" + this.userId + "/preferences"; // Your API endpoint
+      const apiUrl =
+        "http://localhost:8080/user/:" + this.userId + "/preferences"; // Your API endpoint
 
       fetch(apiUrl, {
-        method: 'PUT', // or 'PATCH' if you're only partially updating the resource
+        method: "PUT", // or 'PATCH' if you're only partially updating the resource
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           // Include other headers as needed, like authorization tokens
         },
-        body: JSON.stringify({ preferences: prefs }) // Send the hardRequirements as JSON
+        body: JSON.stringify({ preferences: prefs }), // Send the hardRequirements as JSON
       })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok: ' + response.statusText);
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Handle the successful response here
-        console.log('Preferences updated:', data);
-      })
-      .catch(error => {
-        // Handle any errors here
-        console.error('There was a problem with the update API:', error);
-      });
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok: " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Handle the successful response here
+          console.log("Preferences updated:", data);
+        })
+        .catch((error) => {
+          // Handle any errors here
+          console.error("There was a problem with the update API:", error);
+        });
     },
     filterList() {
       if (this.searchQuery === "" && this.selectedTags.length === 0) {
@@ -336,17 +370,18 @@ export default {
       }
       if (this.selectedTags.length === 0) {
         this.filteredDishes = this.dishes.filter((dish) =>
-          dish.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+          dish.Name.toLowerCase().includes(this.searchQuery.toLowerCase())
         );
       } else {
         // General Filter and then filter that list with tags
         this.filteredDishes = this.dishes.filter((dish) =>
-          dish.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+          dish.Name.toLowerCase().includes(this.searchQuery.toLowerCase())
         );
         console.log(this.filteredDishes);
+        console.log(this.selectedTags);
         this.filteredDishes = this.filteredDishes.filter((dish) =>
           this.selectedTags.some((tag) =>
-            dish.tags
+            dish.Tags
               .map((dishTag) => dishTag.toLowerCase())
               .includes(tag.toLowerCase())
           )
@@ -367,6 +402,24 @@ export default {
       } else {
         this.filterList(this.searchQuery);
       }
+    },
+    getTags() {
+      const apiUrl = "http://localhost:8080/tags"; // Your API endpoint
+
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          this.allTags = data; // Set the Tags to the data received from the API
+          console.log(this.allTags);
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
     },
     getRecipes() {
       const apiUrl = "http://localhost:8080/recipes"; // Your API endpoint
@@ -432,6 +485,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
