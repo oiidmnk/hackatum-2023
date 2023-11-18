@@ -36,7 +36,19 @@
       <div class="container flex flex-grow min-w-full">
         <!-- List -->
         <div class="container w-2/6 bg-green-800 p-4">
-          
+          <ul class="space-y-4">
+            <li class="" v-for="dish in dishes" :key="dish.id">
+              <div class="container min-w-full flex h-20 bg-gray-400 rounded cursor-pointer" @click="selectDish(dish.id)">
+                <div class="w-20 h-20">
+                  <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-grow flex flex-col justify-center px-2">
+                  <h2 class="text-lg font-bold">{{ dish.name }}</h2>
+                  <h4 class="text-sm">{{ dish.tags }}</h4>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
         <!-- Recipe -->
         <div class="container flex flex-grow bg-gray">
