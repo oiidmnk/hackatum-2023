@@ -1,7 +1,9 @@
 const app = Vue.createApp({
     data() {
       return {
-        
+        selectedDish: {
+
+        },
         dishes: [
           {
             id: 1,
@@ -26,7 +28,10 @@ const app = Vue.createApp({
       };
     },
     methods: {
-      
+      selectDish(dishId) {
+        this.showDetails=true;
+        this.selectedDish = this.dishes.find(dish => dish.id === dishId);
+    }
     },
   });
   

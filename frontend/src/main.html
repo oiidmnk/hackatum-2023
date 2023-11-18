@@ -31,7 +31,11 @@
         <div class="min-w-full">
           <input type="text" name="" id="">
         </div>
-        
+        <!--tags-->
+        <div class="flex min-w-full space-x-2">
+          <div class="tags rounded"> Test Tag </div>
+          <div class="tags rounded"> Test Tag </div>
+        </div>
       <!-- Container for all Dish related Details -->
       <div class="container flex flex-grow min-w-full">
         <!-- List -->
@@ -58,7 +62,11 @@
             <div class="container h-40 bg-gray-400 min-w-full"></div>
             <!-- Recipe Info-->
             <div class="container flex-grow min-w-full h-full">
-              
+              <div v-if="showDetails">
+                <h1>{{selectedDish.name}}</h1><br>
+                <h3>Tags: {{selectedDish.tags}}</h3><br><br>
+                <p>{{selectedDish.description}}</p>
+              </div>
             </div>
           </div>
         </div>
