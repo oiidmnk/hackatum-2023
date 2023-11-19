@@ -186,8 +186,7 @@
           </div>
         </div>
         <div v-else class="flex p-8 h-full">
-          <h1 v-if="dishLoading" class="text-2xl font-bold">Please add Items to your Favorites!</h1>
-            <h1 v-else class="text-2xl font-bold">Please Select an Item!</h1>
+          <h1 v-if="dishLoading" class="text-2xl font-bold">Please Select an Item!</h1>
         </div>
       </div>
     </div>
