@@ -69,62 +69,6 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      
-      <!-- Container for all Dish related Details -->
-      <div class="container flex flex-grow min-w-full">
-        <!-- List -->
-        <div class="container flex-grow w-2/6 bg-green-800 p-4">
-          <ul class="space-y-4">
-            <li class="" v-for="dish in filteredDishes" :key="dish.Id">
-              <div
-                class="container min-w-full flex h-20 bg-gray-400 rounded cursor-pointer"
-                @click="selectDish(dish.Id)"
-              >
-                <div class="w-20 h-20">
-                  <img
-                    :src="getImageSrc(dish.Image)"
-                    alt="Dish Image"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <div class="flex-grow flex flex-col justify-center px-2">
-                  <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
-                  <div class="flex">
-                    <span
-                      v-for="(tag, index) in dish.Tags"
-                      :key="tag"
-                      class="text-sm"
-                    >
-                      {{ tag
-                      }}<span v-if="index < dish.Tags.length - 1">, </span>
-                    </span>
-                  </div>
-                  <!--CookingTime & CookingLevel-->
-                  <div class="flex space-x-2">
-                    <div class="flex items-center justify-center">
-                      <p class="mr-1">Time:</p>
-                      <!-- Iterate over the range created by the cookingTime -->
-                      <font-awesome-icon
-                        v-for="n in dish.CookingTime"
-                        :key="n"
-                        :icon="['far', 'clock']"
-                        class="icon-class"
-                      />
-                    </div>
-                    <div class="flex items-center justify-center">
-                      <p class="mr-1">Diff:</p>
-                      <!-- Iterate over the range created by the cookingLevel -->
-                      <font-awesome-icon
-                        v-for="n in dish.CookingLevel"
-                        :key="n"
-                        :icon="['far', 'lemon']"
-                        class="icon-class"
-                      />
-                    </div>
-                  </div>
-                </div>
-=======
     </div>
     <!-- Container for all Dish related Details -->
     <div class="container flex flex-grow min-w-full">
@@ -135,7 +79,6 @@
             <div class="container min-w-full flex h-20 bg-gray-400 rounded cursor-pointer" @click="selectDish(dish.Id)">
               <div class="w-20 h-20">
                 <img :src="getImageSrc(dish.Image)" alt="Dish Image" class="w-full h-full object-cover" />
->>>>>>> 98075e25ea1f5e2b647eec572db26d1f3cb730e7
               </div>
               <div class="flex-grow flex flex-col justify-center px-2">
                 <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
@@ -168,7 +111,7 @@
       <!-- Recipe -->
       <div class="container flex flex-grow bg-gray">
         <!-- Divs between picture and info-->
-        <div class="container flex flex-col flex-grow min-w-full">
+        <div v-if="showDetails" class="container flex flex-col flex-grow min-w-full">
           <!-- Image -->
           <div v-if="showDetails" class="container h-40 bg-gray-400 min-w-full">
             <div v-if="dishLoading">Loading...</div>
@@ -241,6 +184,10 @@
               <div></div>
             </div>
           </div>
+        </div>
+        <div v-else class="flex p-8 h-full">
+          <h1 v-if="dishLoading" class="text-2xl font-bold">Please add Items to your Favorites!</h1>
+            <h1 v-else class="text-2xl font-bold">Please Select an Item!</h1>
         </div>
       </div>
     </div>
@@ -325,6 +272,7 @@ export default {
         })
         .then((data) => {
           console.log(data);
+          this.getRecipes();
         })
         .catch((error) => {
           this.error =
