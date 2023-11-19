@@ -102,59 +102,6 @@
 
 
 
-<!-- 
-      Search 
-      <div class="container min-w-full p-4 space-y-1">
-        <div class="min-w-full flex space-x-1">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            placeholder="Search..."
-            class="w-2/6 h-10 px-5 pr-10 rounded text-sm focus:outline-none border-2 border-gray-300 focus:border-green-500"
-            @input="filterList"
-            v-model="searchQuery"
-          />
-          <button
-            class="h-10 px-3 text-sm rounded border-2 border-gray-300 focus:outline-none focus:border-green-500"
-            @click="toggleDropdown" 
-          > -->
-          <!-- removed toggledropdown -->
-            <!-- Filter
-          </button> -->
-          <!-- removed  updateselectedtags-->
-          <!-- <div v-if="showTags" class="bg-white border rounded shadow-lg z-10">
-            <select
-              class="w-full rounded border-0"
-              @change="updateSelectedTags"
-            >
-              <option value="">none</option>
-              <option
-                v-for="tag in allTags"
-                :key="tag.value"
-                :value="tag.value"
-              >
-                {{ tag }}
-              </option>
-            </select>
-          </div> 
-        </div>
-        tags
-        <div class="flex min-w-full space-x-2">
-          <div></div>
-           <div class="tags rounded" v-for="tag in selectedTags">
-              {{ tag }}
-            </div> 
-        </div>
-      </div>
-        -->
-
-
-
-
-
-
-
 
       <!-- Container for all Dish related Details -->
       <div class="container flex flex-grow min-w-full">
@@ -556,7 +503,7 @@ export default {
       return preferences;
     },
     getRecipes() {
-      const apiUrl = "http://localhost:8080/recipes/" + this.userId; // Your API endpoint
+      const apiUrl = "http://localhost:8080/liked/" + this.userId; // Your API endpoint
 
       fetch(apiUrl)
         .then((response) => {

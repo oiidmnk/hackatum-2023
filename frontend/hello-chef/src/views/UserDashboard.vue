@@ -21,8 +21,8 @@
             <br />
             <h4>
               As a new user you need to select your
-              <p v-if="showHardRequirements">preferences</p>
-              <p v-if="showPreferences">Hard Requirements</p>
+              <p v-if="showHardRequirements">Hard Requirements</p>
+              <p v-if="showPreferences">Preferences</p>
               so make<br />
               sure we can recommend you the best recipes possible!
             </h4>
@@ -33,8 +33,8 @@
                 v-for="(value, key) in hardRequirements"
                 :key="key"
                 :class="{
-                  'bg-blue-500': !value,
-                  'bg-blue-700': value,
+                  'bg-green-400': !value,
+                  'bg-green-700': value,
                   'text-white': true,
                   'font-bold': true,
                   'py-2': true,
@@ -53,22 +53,22 @@
               <button
                 id="ok-btn"
                 @click="moveToPreferences"
-                class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500"
+                class="px-4 py-2 bg-green-400 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-green-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500"
               >
                 Set Preferences
               </button>
             </div>
             <!--Preferences-->
             <div
-              class="grid grid-cols-6 gap-4 overflow-scroll"
+              class="grid grid-cols-4 gap-4 overflow-scroll"
               v-if="showPreferences"
             >
               <button
                 v-for="(value, key) in preferences"
                 :key="key"
                 :class="{
-                  'bg-blue-500': !value,
-                  'bg-blue-700': value,
+                  'bg-green-400': !value,
+                  'bg-green-700': value,
                   'text-white': true,
                   'font-bold': true,
                   'py-2': true,
@@ -87,7 +87,7 @@
               <button
                 id="ok-btn"
                 @click="closeModal"
-                class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500"
+                class="px-4 py-2 bg-green-400 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-green-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500"
               >
                 Finished
               </button>
@@ -243,7 +243,7 @@
                         </h1>
                         <!-- Like button -->
                         <button
-                          @click="likeRecipe(selectedDish.Id, dish)"
+                          @click="likeRecipe(selectedDish.Id)"
                           class="p-2 bg-green-500 text-white rounded hover:bg-green-700"
                         >
                           Like
@@ -251,7 +251,7 @@
 
                         <!-- Dislike button -->
                         <button
-                          @click="dislikeRecipe(selectedDish.Id, dish)"
+                          @click="dislikeRecipe(selectedDish.Id)"
                           class="p-2 bg-red-500 text-white rounded hover:bg-red-700"
                         >
                           Dislike
@@ -389,65 +389,47 @@ export default {
     }
   },
   methods: {
-    likeRecipe(recipeId, selDish) {
+    likeRecipe(recipeId) {
       // Method logic to handle liking a recipe
       const apiUrl =
         "http://localhost:8080/like/" + recipeId + "/" + this.userId; // Your API endpoint
 
-      fetch(apiUrl, {
-        method: "PUT", // or 'PATCH' if you're only partially updating the resource
-        headers: {
-          "Content-Type": "application/json",
-          // Include other headers as needed, like authorization tokens
-        },
-        body: JSON.stringify({ preferences: selDish }), // Send the hardRequirements as JSON
-      })
+        fetch(apiUrl)
         .then((response) => {
           if (!response.ok) {
-            throw new Error(
-              "Network response was not ok: " + response.statusText
-            );
+            throw new Error("Network response was not ok");
           }
+          console.log(recipeId);
           return response.json();
         })
         .then((data) => {
-          // Handle the successful response here
-          console.log("Preferences updated:", data);
+          console.log(data);
         })
         .catch((error) => {
-          // Handle any errors here
-          console.error("There was a problem with the update API:", error);
+          this.error =
+            "There was a problem with the fetch operation: " + error.message;
         });
     },
-    dislikeRecipe(recipeId, selDish) {
+    dislikeRecipe(recipeId) {
       // Method logic to handle disliking a recipe
       // Method logic to handle liking a recipe
       const apiUrl =
         "http://localhost:8080/dislike/" + recipeId + "/" + this.userId; // Your API endpoint
 
-      fetch(apiUrl, {
-        method: "PUT", // or 'PATCH' if you're only partially updating the resource
-        headers: {
-          "Content-Type": "application/json",
-          // Include other headers as needed, like authorization tokens
-        },
-        body: JSON.stringify({ preferences: selDish }), // Send the hardRequirements as JSON
-      })
+        fetch(apiUrl)
         .then((response) => {
           if (!response.ok) {
-            throw new Error(
-              "Network response was not ok: " + response.statusText
-            );
+            throw new Error("Network response was not ok");
           }
+          console.log(recipeId);
           return response.json();
         })
         .then((data) => {
-          // Handle the successful response here
-          console.log("Preferences updated:", data);
+          console.log(data);
         })
         .catch((error) => {
-          // Handle any errors here
-          console.error("There was a problem with the update API:", error);
+          this.error =
+            "There was a problem with the fetch operation: " + error.message;
         });
     },
     getIcon(specialIcon) {
