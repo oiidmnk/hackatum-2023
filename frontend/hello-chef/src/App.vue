@@ -163,13 +163,19 @@
                 <div class="flex-grow flex flex-col justify-center px-2">
                   <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
                   <div class="flex">
-                    <h4 v-for="tag in dish.Tags" :key="tag" class="text-sm">
-                      {{ tag }},
-                    </h4>
+                    <span
+                      v-for="(tag, index) in dish.Tags"
+                      :key="tag"
+                      class="text-sm"
+                    >
+                      {{ tag
+                      }}<span v-if="index < dish.Tags.length - 1">, </span>
+                    </span>
                   </div>
                   <!--CookingTime & CookingLevel-->
-                  <div class="flex">
-                    <div>
+                  <div class="flex space-x-2">
+                    <div class="flex items-center justify-center">
+                      <p class="mr-1">Time:</p>
                       <!-- Iterate over the range created by the cookingTime -->
                       <font-awesome-icon
                         v-for="n in dish.CookingTime"
@@ -178,7 +184,8 @@
                         class="icon-class"
                       />
                     </div>
-                    <div>
+                    <div class="flex items-center justify-center">
+                      <p class="mr-1">Diff:</p>
                       <!-- Iterate over the range created by the cookingLevel -->
                       <font-awesome-icon
                         v-for="n in dish.CookingLevel"
@@ -222,24 +229,47 @@
                         Cooking Time:
                         {{ selectedDish.RecipeProperties.cooking_time }}
                       </p>
+                      <font-awesome-icon
+                        v-for="n in selectedDish.RecipeProperties.cooking_time"
+                        :key="n"
+                        :icon="['far', 'clock']"
+                        class="icon-class"
+                      />
                       <p>
                         Cooking Level:
                         {{ selectedDish.RecipeProperties.cooking_level }}
                       </p>
+                      <font-awesome-icon
+                        v-for="n in selectedDish.RecipeProperties.cooking_level"
+                        :key="n"
+                        :icon="['far', 'lemon']"
+                        class="icon-class"
+                      />
                       <div class="flex">
                         Tags:
-                        <p v-for="tag in selectedDish.Tags" :key="tag">
-                          {{ tag }}
-                        </p>
+                        <span
+                          v-for="(tag, index) in selectedDish.Tags"
+                          :key="tag"
+                          class="text-sm"
+                        >
+                          {{ tag
+                          }}<span v-if="index < selectedDish.Tags.length - 1"
+                            >,
+                          </span>
+                        </span>
                       </div>
                       <div class="flex">
                         Properties:
-                        <p
-                          v-for="property in selectedDish.Properties"
+                        <span
+                          v-for="(property, index) in selectedDish.Properties"
                           :key="property"
+                          class="text-sm"
                         >
-                          {{ property }}
-                        </p>
+                          {{ property
+                          }}<span v-if="index < selectedDish.Properties.length - 1"
+                            >,
+                          </span>
+                        </span>
                       </div>
                     </div>
                   </div>
