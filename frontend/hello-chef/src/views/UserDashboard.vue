@@ -156,7 +156,9 @@
                   />
                 </div>
                 <div class="flex-grow flex flex-col justify-center px-2">
-                  <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
+                  <div class="flex">
+                    <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
+                  </div>
                   <div class="flex">
                     <span
                       v-for="(tag, index) in dish.Tags"
@@ -235,7 +237,26 @@
                   <div v-else class="flex text-left">
                     <!-- General Info -->
                     <div class="w-5/6 pr-16 pl-8 py-8">
-                      <h1 class="font-bold text-xl">{{ selectedDish.Name }}</h1>
+                      <div class="flex justify-items-center space-x-2">
+                        <h1 class="font-bold text-xl">
+                          {{ selectedDish.Name }}
+                        </h1>
+                        <!-- Like button -->
+                        <button
+                          @click="likeRecipe(selectedDish.Id, dish)"
+                          class="p-2 bg-green-500 text-white rounded hover:bg-green-700"
+                        >
+                          Like
+                        </button>
+
+                        <!-- Dislike button -->
+                        <button
+                          @click="dislikeRecipe(selectedDish.Id, dish)"
+                          class="p-2 bg-red-500 text-white rounded hover:bg-red-700"
+                        >
+                          Dislike
+                        </button>
+                      </div>
                       <br />
                       <h3 class="text-lg">{{ selectedDish.Description }}</h3>
                       <br />
@@ -368,6 +389,67 @@ export default {
     }
   },
   methods: {
+    likeRecipe(recipeId, selDish) {
+      // Method logic to handle liking a recipe
+      const apiUrl =
+        "http://localhost:8080/like/" + recipeId + "/" + this.userId; // Your API endpoint
+
+      fetch(apiUrl, {
+        method: "PUT", // or 'PATCH' if you're only partially updating the resource
+        headers: {
+          "Content-Type": "application/json",
+          // Include other headers as needed, like authorization tokens
+        },
+        body: JSON.stringify({ preferences: selDish }), // Send the hardRequirements as JSON
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok: " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Handle the successful response here
+          console.log("Preferences updated:", data);
+        })
+        .catch((error) => {
+          // Handle any errors here
+          console.error("There was a problem with the update API:", error);
+        });
+    },
+    dislikeRecipe(recipeId, selDish) {
+      // Method logic to handle disliking a recipe
+      // Method logic to handle liking a recipe
+      const apiUrl =
+        "http://localhost:8080/dislike/" + recipeId + "/" + this.userId; // Your API endpoint
+
+      fetch(apiUrl, {
+        method: "PUT", // or 'PATCH' if you're only partially updating the resource
+        headers: {
+          "Content-Type": "application/json",
+          // Include other headers as needed, like authorization tokens
+        },
+        body: JSON.stringify({ preferences: selDish }), // Send the hardRequirements as JSON
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok: " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Handle the successful response here
+          console.log("Preferences updated:", data);
+        })
+        .catch((error) => {
+          // Handle any errors here
+          console.error("There was a problem with the update API:", error);
+        });
+    },
     getIcon(specialIcon) {
       const icons = {
         Spicy: {
@@ -376,8 +458,8 @@ export default {
         },
         "Gluten free": {
           // Assuming 'wheat-awn' is a placeholder for the actual icon you have
-          name: ['fas', 'wheat-awn'],
-          color: '#e3e656',
+          name: ["fas", "wheat-awn"],
+          color: "#e3e656",
         },
         Vegan: {
           name: ["fas", "seedling"],
