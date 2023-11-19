@@ -149,7 +149,11 @@
                 @click="selectDish(dish.Id)"
               >
                 <div class="w-20 h-20">
-                    <img :src="getImageSrc(dish.Image)" alt="Dish Image" class="w-full h-full object-cover" />
+                  <img
+                    :src="getImageSrc(dish.Image)"
+                    alt="Dish Image"
+                    class="w-full h-full object-cover"
+                  />
                 </div>
                 <div class="flex-grow flex flex-col justify-center px-2">
                   <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
@@ -196,8 +200,9 @@
           <!-- Divs between picture and info-->
           <div class="container flex flex-col flex-grow min-w-full">
             <!-- Image -->
-            <div class="container h-40 bg-gray-400 min-w-full">
-                <!-- <img :src="getImageSrc(selectedDish.Image)" alt="Dish Image" class="w-full h-full object-cover" /> -->
+            <div v-if="showDetails" class="container h-40 bg-gray-400 min-w-full">
+                <div v-if="dishLoading">Loading...</div>
+                <div v-else><img :src="getImageSrc(selectedDish.Image)" alt="Dish Image" class="w-full h-40 object-cover align-middle" /></div>
             </div>
             <!-- Recipe Info-->
             <div class="flex">
@@ -217,7 +222,7 @@
                       <br />
                     </div>
                     <!-- Extra Properties -->
-                    <div class="text-right flex-grow bg-green-200 pr-8 py-8">
+                    <div class="text-right max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8">
                       <p>
                         Cooking Time:
                         {{ selectedDish.RecipeProperties.cooking_time }}
@@ -238,30 +243,28 @@
                         :icon="['far', 'lemon']"
                         class="icon-class"
                       />
-                      <div class="flex">
-                        Tags:
+                      <p>Tags:</p>
+                      <div class="flex flex-wrap flex-row-reverse">
                         <span
                           v-for="(tag, index) in selectedDish.Tags"
                           :key="tag"
-                          class="text-sm"
-                        >
+                          class="text-sm text-right justify-items-start"
+                        > 
                           {{ tag
-                          }}<span v-if="index < selectedDish.Tags.length - 1"
-                            >,
-                          </span>
+                          }} <span v-if="index < selectedDish.Tags.length - 1"
+                            >, </span>
                         </span>
                       </div>
-                      <div class="flex">
-                        Properties:
+                      <p>Properties:</p>
+                      <div class="flex-wrap flex flex-row-reverse">
                         <span
-                          v-for="(property, index) in selectedDish.Properties"
-                          :key="property"
+                          v-for="(value, key) in selectedDish.Properties"
+                          :key="key"
                           class="text-sm"
                         >
-                          {{ property
-                          }}<span
-                            v-if="index < selectedDish.Properties.length - 1"
-                            >,
+                          <span v-if="value">
+                            {{ key }}
+                            <span v-if="notLastItem(key)">, </span>
                           </span>
                         </span>
                       </div>
@@ -339,6 +342,14 @@ export default {
     }
   },
   methods: {
+    notLastItem(key) {
+        console.log("test");
+        console.log(this.selectDish.Properties);
+      const keys = Object.keys(this.selectedDish.Properties).filter(
+        (k) => this.selectedDish.Properties[k]
+      );
+      return keys.indexOf(key) < keys.length - 1;
+    },
     getImageSrc(imagePath) {
       // Use require to resolve the path to the actual image file
       return require(`@/assets/${imagePath}`);
