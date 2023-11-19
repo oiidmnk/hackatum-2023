@@ -1,320 +1,198 @@
 <template>
   <!DOCTYPE html>
   <html lang="en">
-    <!--Window-->
-    <div class="container flex flex-col min-h-screen min-w-full max-h-full">
-      <!--Popup-->
-      <div
-        v-if="showNewUserPopup"
-        class="modal fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center"
-      >
-        <!-- The modal -->
-        <div
-          id="popupContainer"
-          class="m-auto p-5 border w-1/3 shadow-lg rounded-md bg-white"
-        >
-          <!-- Modal content -->
-          <div class="mt-3 text-center">
-            <h3 class="text-lg leading-6 font-medium text-gray-900">
-              Welcome!
-            </h3>
-            <br />
-            <h4>
-              As a new user you need to select your
-              <p v-if="showHardRequirements">preferences</p>
-              <p v-if="showPreferences">Hard Requirements</p>
-              so make<br />
-              sure we can recommend you the best recipes possible!
-            </h4>
-            <br />
-            <!--Hard requirements-->
-            <div class="grid grid-cols-3 gap-4" v-if="showHardRequirements">
-              <button
-                v-for="(value, key) in hardRequirements"
-                :key="key"
-                :class="{
-                  'bg-blue-500': !value,
-                  'bg-blue-700': value,
-                  'text-white': true,
-                  'font-bold': true,
-                  'py-2': true,
-                  'px-4': true,
-                  rounded: true,
-                  'focus:outline-none': true,
-                  'focus:shadow-outline': true,
-                }"
-                @click="toggleRequirement(key)"
-              >
-                {{ key.replace("_", " ") }}
-              </button>
-            </div>
-            <!-- Switch to preferences -->
-            <div class="items-center px-4 py-3" v-if="showHardRequirements">
-              <button
-                id="ok-btn"
-                @click="moveToPreferences"
-                class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500"
-              >
-                Set Preferences
-              </button>
-            </div>
-            <!--Preferences-->
-            <div
-              class="grid grid-cols-6 gap-4 overflow-scroll"
-              v-if="showPreferences"
-            >
-              <button
-                v-for="(value, key) in preferences"
-                :key="key"
-                :class="{
-                  'bg-blue-500': !value,
-                  'bg-blue-700': value,
-                  'text-white': true,
-                  'font-bold': true,
-                  'py-2': true,
-                  'px-4': true,
-                  rounded: true,
-                  'focus:outline-none': true,
-                  'focus:shadow-outline': true,
-                }"
-                @click="togglePreference(key)"
-              >
-                {{ key.replace("_", " ") }}
-              </button>
-            </div>
-            <!-- Close Popup -->
-            <div class="items-center px-4 py-3" v-if="showPreferences">
-              <button
-                id="ok-btn"
-                @click="closeModal"
-                class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500"
-              >
-                Finished
-              </button>
-            </div>
+  <!--Window-->
+  <div class="container flex flex-col min-h-screen min-w-full max-h-full">
+    <!--Popup-->
+    <div v-if="showNewUserPopup" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+      <!-- The modal -->
+      <div id="popupContainer" class="m-auto p-5 border w-1/3 shadow-lg rounded-md bg-white">
+        <!-- Modal content -->
+        <div class="mt-3 text-center">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Welcome!
+          </h3>
+          <br />
+          <h4>
+            As a new user you need to select your
+            <p v-if="showHardRequirements">preferences</p>
+            <p v-if="showPreferences">Hard Requirements</p>
+            so make<br />
+            sure we can recommend you the best recipes possible!
+          </h4>
+          <br />
+          <!--Hard requirements-->
+          <div class="grid grid-cols-3 gap-4" v-if="showHardRequirements">
+            <button v-for="(value, key) in hardRequirements" :key="key" :class="{
+              'bg-blue-500': !value,
+              'bg-blue-700': value,
+              'text-white': true,
+              'font-bold': true,
+              'py-2': true,
+              'px-4': true,
+              rounded: true,
+              'focus:outline-none': true,
+              'focus:shadow-outline': true,
+            }" @click="toggleRequirement(key)">
+              {{ key.replace("_", " ") }}
+            </button>
+          </div>
+          <!-- Switch to preferences -->
+          <div class="items-center px-4 py-3" v-if="showHardRequirements">
+            <button id="ok-btn" @click="moveToPreferences"
+              class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500">
+              Set Preferences
+            </button>
+          </div>
+          <!--Preferences-->
+          <div class="grid grid-cols-6 gap-4 overflow-scroll" v-if="showPreferences">
+            <button v-for="(value, key) in preferences" :key="key" :class="{
+              'bg-blue-500': !value,
+              'bg-blue-700': value,
+              'text-white': true,
+              'font-bold': true,
+              'py-2': true,
+              'px-4': true,
+              rounded: true,
+              'focus:outline-none': true,
+              'focus:shadow-outline': true,
+            }" @click="togglePreference(key)">
+              {{ key.replace("_", " ") }}
+            </button>
+          </div>
+          <!-- Close Popup -->
+          <div class="items-center px-4 py-3" v-if="showPreferences">
+            <button id="ok-btn" @click="closeModal"
+              class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-500">
+              Finished
+            </button>
           </div>
         </div>
       </div>
-
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-<!-- 
-      Search 
-      <div class="container min-w-full p-4 space-y-1">
-        <div class="min-w-full flex space-x-1">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            placeholder="Search..."
-            class="w-2/6 h-10 px-5 pr-10 rounded text-sm focus:outline-none border-2 border-gray-300 focus:border-green-500"
-            @input="filterList"
-            v-model="searchQuery"
-          />
-          <button
-            class="h-10 px-3 text-sm rounded border-2 border-gray-300 focus:outline-none focus:border-green-500"
-            @click="toggleDropdown" 
-          > -->
-          <!-- removed toggledropdown -->
-            <!-- Filter
-          </button> -->
-          <!-- removed  updateselectedtags-->
-          <!-- <div v-if="showTags" class="bg-white border rounded shadow-lg z-10">
-            <select
-              class="w-full rounded border-0"
-              @change="updateSelectedTags"
-            >
-              <option value="">none</option>
-              <option
-                v-for="tag in allTags"
-                :key="tag.value"
-                :value="tag.value"
-              >
-                {{ tag }}
-              </option>
-            </select>
-          </div> 
-        </div>
-        tags
-        <div class="flex min-w-full space-x-2">
-          <div></div>
-           <div class="tags rounded" v-for="tag in selectedTags">
-              {{ tag }}
-            </div> 
-        </div>
-      </div>
-        -->
-
-
-
-
-
-
-
-
->>>>>>> 84b92f68fa167fa437d4315b4c296398cec3ade8
-      <!-- Container for all Dish related Details -->
-      <div class="container flex flex-grow min-w-full">
-        <!-- List -->
-        <div class="container flex-grow w-2/6 bg-green-800 p-4">
-          <ul class="space-y-4">
-            <li class="" v-for="dish in filteredDishes" :key="dish.Id">
-              <div
-                class="container min-w-full flex h-20 bg-gray-400 rounded cursor-pointer"
-                @click="selectDish(dish.Id)"
-              >
-                <div class="w-20 h-20">
-                  <img
-                    :src="getImageSrc(dish.Image)"
-                    alt="Dish Image"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <div class="flex-grow flex flex-col justify-center px-2">
-                  <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
-                  <div class="flex">
-                    <span
-                      v-for="(tag, index) in dish.Tags"
-                      :key="tag"
-                      class="text-sm"
-                    >
-                      {{ tag
-                      }}<span v-if="index < dish.Tags.length - 1">, </span>
-                    </span>
-                  </div>
-                  <!--CookingTime & CookingLevel-->
-                  <div class="flex space-x-2">
-                    <div class="flex items-center justify-center">
-                      <p class="mr-1">Time:</p>
-                      <!-- Iterate over the range created by the cookingTime -->
-                      <font-awesome-icon
-                        v-for="n in dish.CookingTime"
-                        :key="n"
-                        :icon="['far', 'clock']"
-                        class="icon-class"
-                      />
-                    </div>
-                    <div class="flex items-center justify-center">
-                      <p class="mr-1">Diff:</p>
-                      <!-- Iterate over the range created by the cookingLevel -->
-                      <font-awesome-icon
-                        v-for="n in dish.CookingLevel"
-                        :key="n"
-                        :icon="['far', 'lemon']"
-                        class="icon-class"
-                      />
-                    </div>
-                  </div>
-                </div>
+    </div>
+    <!-- Container for all Dish related Details -->
+    <div class="container flex flex-grow min-w-full">
+      <!-- List -->
+      <div class="container flex-grow w-2/6 bg-green-800 p-4">
+        <ul class="space-y-4">
+          <li class="" v-for="dish in filteredDishes" :key="dish.Id">
+            <div class="container min-w-full flex h-20 bg-gray-400 rounded cursor-pointer" @click="selectDish(dish.Id)">
+              <div class="w-20 h-20">
+                <img :src="getImageSrc(dish.Image)" alt="Dish Image" class="w-full h-full object-cover" />
               </div>
-            </li>
-          </ul>
-        </div>
-        <!-- Recipe -->
-        <div class="container flex flex-grow bg-gray">
-          <!-- Divs between picture and info-->
-          <div class="container flex flex-col flex-grow min-w-full">
-            <!-- Image -->
-            <div
-              v-if="showDetails"
-              class="container h-40 bg-gray-400 min-w-full"
-            >
-              <div v-if="dishLoading">Loading...</div>
-              <div v-else>
-                <img
-                  :src="getImageSrc(selectedDish.Image)"
-                  alt="Dish Image"
-                  class="w-full h-40 object-cover align-middle"
-                />
+              <div class="flex-grow flex flex-col justify-center px-2">
+                <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
+                <div class="flex">
+                  <span v-for="(tag, index) in dish.Tags" :key="tag" class="text-sm">
+                    {{ tag
+                    }}<span v-if="index < dish.Tags.length - 1">, </span>
+                  </span>
+                </div>
+                <!--CookingTime & CookingLevel-->
+                <div class="flex space-x-2">
+                  <div class="flex items-center justify-center">
+                    <p class="mr-1">Time:</p>
+                    <!-- Iterate over the range created by the cookingTime -->
+                    <font-awesome-icon v-for="n in dish.CookingTime" :key="n" :icon="['far', 'clock']"
+                      class="icon-class" />
+                  </div>
+                  <div class="flex items-center justify-center">
+                    <p class="mr-1">Diff:</p>
+                    <!-- Iterate over the range created by the cookingLevel -->
+                    <font-awesome-icon v-for="n in dish.CookingLevel" :key="n" :icon="['far', 'lemon']"
+                      class="icon-class" />
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- Recipe Info-->
-            <div class="flex">
-              <div class="container flex-grow min-w-full h-full">
-                <div v-if="showDetails" class="space-x-4">
-                  <div v-if="dishLoading">Loading</div>
-                  <div v-else class="flex text-left">
-                    <!-- General Info -->
-                    <div class="w-5/6 pr-16 pl-8 py-8">
-                      <h1 class="font-bold text-xl">{{ selectedDish.Name }}</h1>
-                      <br />
-                      <h3 class="text-lg">{{ selectedDish.Description }}</h3>
-                      <br />
-                      <p>Recipe:</p>
-                      <br />
-                      <p>{{ selectedDish.CookingInstructions }}</p>
-                      <br />
+          </li>
+        </ul>
+      </div>
+      <!-- Recipe -->
+      <div class="container flex flex-grow bg-gray">
+        <!-- Divs between picture and info-->
+        <div class="container flex flex-col flex-grow min-w-full">
+          <!-- Image -->
+          <div v-if="showDetails" class="container h-40 bg-gray-400 min-w-full">
+            <div v-if="dishLoading">Loading...</div>
+            <div v-else>
+              <img :src="getImageSrc(selectedDish.Image)" alt="Dish Image"
+                class="w-full h-40 object-cover align-middle" />
+            </div>
+          </div>
+          <!-- Recipe Info-->
+          <div class="flex">
+            <div class="container flex-grow min-w-full h-full">
+              <div v-if="showDetails" class="space-x-4">
+                <div v-if="dishLoading">Loading</div>
+                <div v-else class="flex text-left">
+                  <!-- General Info -->
+                  <div class="w-5/6 pr-16 pl-8 py-8">
+                    <div class="flex justify-items-center space-x-2">
+                      <h1 class="font-bold text-xl">
+                        {{ selectedDish.Name }}
+                      </h1>
+                      <!-- Like button -->
+                      <button @click="likeRecipe(selectedDish.Id)"
+                        class="p-2 bg-red-500 text-white rounded hover:bg-red-700">
+                        Remove
+                      </button>
                     </div>
-                    <!-- Extra Properties -->
-                    <div
-                      class="text-right max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8"
-                    >
-                      <p>
-                        Cooking Time:
-                        {{ selectedDish.RecipeProperties.cooking_time }}
-                      </p>
-                      <font-awesome-icon
-                        v-for="n in selectedDish.RecipeProperties.cooking_time"
-                        :key="n"
-                        :icon="['far', 'clock']"
-                        class="icon-class"
-                      />
-                      <p>
-                        Cooking Level:
-                        {{ selectedDish.RecipeProperties.cooking_level }}
-                      </p>
-                      <font-awesome-icon
-                        v-for="n in selectedDish.RecipeProperties.cooking_level"
-                        :key="n"
-                        :icon="['far', 'lemon']"
-                        class="icon-class"
-                      />
-                      <p>Tags:</p>
-                      <div class="flex flex-wrap flex-row-reverse">
-                        <span
-                          v-for="(tag, index) in selectedDish.Tags"
-                          :key="tag"
-                          class="text-sm text-right justify-items-start"
-                        >
-                          {{ tag }}
-                          <span v-if="index < selectedDish.Tags.length - 1"
-                            >,
-                          </span>
+                    <br />
+                    <h3 class="text-lg">{{ selectedDish.Description }}</h3>
+                    <br />
+                    <p>Recipe:</p>
+                    <br />
+                    <p>{{ selectedDish.CookingInstructions }}</p>
+                    <br />
+                  </div>
+                  <!-- Extra Properties -->
+                  <div class="text-right max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8">
+                    <p>
+                      Cooking Time:
+                      {{ selectedDish.RecipeProperties.cooking_time }}
+                    </p>
+                    <font-awesome-icon v-for="n in selectedDish.RecipeProperties.cooking_time" :key="n"
+                      :icon="['far', 'clock']" class="icon-class" />
+                    <p>
+                      Cooking Level:
+                      {{ selectedDish.RecipeProperties.cooking_level }}
+                    </p>
+                    <font-awesome-icon v-for="n in selectedDish.RecipeProperties.cooking_level" :key="n"
+                      :icon="['far', 'lemon']" class="icon-class" />
+                    <p>Tags:</p>
+                    <div class="flex flex-wrap flex-row-reverse">
+                      <span v-for="(tag, index) in selectedDish.Tags" :key="tag"
+                        class="text-sm text-right justify-items-start">
+                        {{ tag }}
+                        <span v-if="index < selectedDish.Tags.length - 1">,
                         </span>
-                      </div>
-                      <p>Properties:</p>
-                      <div class="flex-wrap flex flex-row-reverse">
-                        <span
-                          v-for="(value, key) in selectedDish.Properties"
-                          :key="key"
-                          class="text-sm"
-                        >
-                          <span v-if="value">
-                            {{ key }}
-                            <span v-if="notLastItem(key)">, </span>
-                          </span>
+                      </span>
+                    </div>
+                    <p>Properties:</p>
+                    <div class="flex-wrap flex flex-row-reverse">
+                      <span v-for="(value, key) in selectedDish.Properties" :key="key" class="text-sm">
+                        <span v-if="value">
+                          {{ key }}
+                          <span v-if="notLastItem(key)">, </span>
                         </span>
-                      </div>
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div></div>
               </div>
+              <div></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
   </html>
 </template>
   
-  <script>
+<script>
 export default {
   data() {
     return {
@@ -375,6 +253,27 @@ export default {
     }
   },
   methods: {
+    likeRecipe(recipeId) {
+      // Method logic to handle liking a recipe
+      const apiUrl =
+        "http://localhost:8080/like/" + recipeId + "/" + this.userId; // Your API endpoint
+
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          console.log(recipeId);
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          this.error =
+            "There was a problem with the fetch operation: " + error.message;
+        });
+    },
     notLastItem(key) {
       console.log("test");
       console.log(this.selectDish.Properties);
@@ -628,7 +527,7 @@ export default {
 };
 </script>
   
-  <style>
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
