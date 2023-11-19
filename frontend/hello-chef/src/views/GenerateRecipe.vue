@@ -3,32 +3,9 @@
   <html lang="en">
     <!--Window-->
     <div class="container flex flex-col min-h-screen min-w-full max-h-full">
-      <!-- Header -->
-      <div
-        class="container h-20 min-w-full bg-green-800 flex items-center justify-between px-4"
-      >
-        <router-link to="/">
-          <img src="@/assets/hello_chef_logo.png" alt="Logo" class="h-full" />
-        </router-link>
-        <nav>
-          <ul class="flex">
-            <li class="px-5">
-              <router-link to="/" class="text-white">Dashboard</router-link>
-            </li>
-            <li class="px-5">
-              <router-link to="/list" class="text-white">My List</router-link>
-            </li>
-            <li class="px-5">
-              <router-link to="/generate" class="text-white"
-                >Generate Recipes</router-link
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
       <!--Form to generate a Recipe-->
-      <div>
-        <h3>Welcome to the Beta Recipe Generator</h3>
+      <div class="p-16">
+        <h3>Welcome to the Beta Version of the Recipe Generator</h3>
         <p>
           Input a series of ingredients and select a tag, your allergens will be
           taken into consideration here
@@ -102,16 +79,24 @@ export default {
     };
   },
   methods: {
-    submitForm() {
-      const apiUrl = "http://yourapi.com/endpoint"; // Replace with your API endpoint
+    submitRecipeForm() {
+      const promptString = `Hello, please generate a recipe containing the following ingredients [${this.ingredients.join(
+        ", "
+      )}], in the style of ${
+        this.style
+      }. Avoid the following: [${this.avoidances.join(
+        ", "
+      )}] due to an allergy of the person that will be eating the dish.`;
 
+      // Call your API endpoint and pass the prompt string
+      const apiUrl = "/api/generate-recipe"; // Your server endpoint that calls OpenAI
       fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Add any other headers your API needs
+          // Include other headers as needed
         },
-        body: JSON.stringify(this.formData),
+        body: JSON.stringify({ prompt: promptString }),
       })
         .then((response) => {
           if (!response.ok) {
@@ -121,7 +106,7 @@ export default {
         })
         .then((data) => {
           console.log(data);
-          // Handle the response from the server
+          // Handle the response here, e.g., display the generated recipe
         })
         .catch((error) => {
           console.error("There was a problem with the fetch operation:", error);
