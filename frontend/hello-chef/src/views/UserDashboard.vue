@@ -96,7 +96,7 @@
         </div>
       </div>
       <!-- Search -->
-      <div class="container min-w-full p-4 space-y-1">
+      <div class="container min-w-full p-4 space-y-1 bg-green-200">
         <!--Search Bar-->
         <div class="min-w-full flex space-x-1">
           <input
@@ -109,7 +109,7 @@
             v-model="searchQuery"
           />
           <button
-            class="h-10 px-3 text-sm rounded border-2 border-gray-300 focus:outline-none focus:border-green-500"
+            class="h-10 px-3 text-sm rounded border-2 bg-white border-gray-300 focus:outline-none focus:border-green-500"
             @click="toggleDropdown"
           >
             Filter
