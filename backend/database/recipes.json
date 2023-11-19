@@ -35,7 +35,6 @@
     "rating": 5,
     "tags": [
       "Indian",
-      "Curry",
       "Rich"
     ],
     "ingredients": [
@@ -62,8 +61,7 @@
     "rating": 5,
     "tags": [
       "Mexican",
-      "Street Food",
-      "Flavorful"
+      "Street Food"
     ],
     "ingredients": [
       "Pork shoulder",
@@ -86,8 +84,7 @@
     "image": "image/margherita-pizza.jpg",
     "rating": 5,
     "tags": [
-      "italian",
-      "european"
+      "Italian"
     ],
     "ingredients": [
       "Pizza dough",
@@ -109,9 +106,8 @@
     "image": "image/beef-bourguignon.jpg",
     "rating": 5,
     "tags": [
-      "french",
-      "european",
-      "comfort"
+      "French",
+      "Rich"
     ],
     "ingredients": [
       "beef",
@@ -136,8 +132,8 @@
     "image": "image/roasted-vegetable-medley.jpg",
     "rating": 4,
     "tags": [
-      "healthy",
-      "roasted"
+      "Healthy",
+      "Classic"
     ],
     "ingredients": [
       "Bell peppers",
@@ -163,9 +159,8 @@
     "image": "image/chicken-tikka-masala.jpg",
     "rating": 5,
     "tags": [
-      "indian",
-      "asian",
-      "comfort"
+      "Indian",
+      "Rich"
     ],
     "ingredients": [
       "Chicken breast",
@@ -194,10 +189,9 @@
     "image": "image/classic-caesar-salad.jpg",
     "rating": 4,
     "tags": [
-      "italian",
-      "salad",
-      "classic"
-    ],
+      "Italian",
+      "Salad"
+        ],
     "ingredients": [
       "Romaine lettuce",
       "Croutons",
@@ -223,9 +217,8 @@
     "image": "image/lemon-herb-grilled-salmon.jpg",
     "rating": 5,
     "tags": [
-      "seafood",
-      "grilled",
-      "healthy"
+      "Seafood",
+      "Healthy"
     ],
     "ingredients": [
       "Salmon fillets",
@@ -241,7 +234,7 @@
     "cooking_instructions": "Combine lemon zest, lemon juice, chopped dill, parsley, minced garlic, olive oil, salt, and pepper to create a marinade.\n Coat the salmon and let it marinate. Grill the salmon to desired doneness. Serve with extra lemon wedges and a sprinkle of fresh herbs."
   },
   {
-    "name": "Quinoa and Black Bean Salad",
+    "name": "Quinoa Black Bean Salad",
     "recipe_properties": {
       "cooking_time": 1,
       "cooking_level": 1
@@ -250,8 +243,8 @@
     "image": "image/quinoa-black-bean-salad.jpg",
     "rating": 4,
     "tags": [
-      "salad",
-      "healthy"
+      "Salad",
+      "Healthy"
     ],
     "ingredients": [
       "Quinoa",
@@ -279,9 +272,9 @@
     "image": "image/pan-seared-duck-breast.jpg",
     "rating": 5,
     "tags": [
-      "french",
-      "gourmet",
-      "rich"
+      "French",
+      "Healthy",
+      "Rich"
     ],
     "ingredients": [
       "Duck breast",
@@ -307,9 +300,7 @@
     "image": "image/spinach-ricotta-stuffed-shells.jpg",
     "rating": 4,
     "tags": [
-      "italian",
-      "baked"
-    ],
+      "Italian"    ],
     "ingredients": [
       "Jumbo pasta shells",
       "Ricotta cheese",
@@ -335,8 +326,8 @@
     "image": "image/spicy-thai-basil-chicken.jpg",
     "rating": 5,
     "tags": [
-      "thai",
-      "asian"
+      "Thai",
+      "Asian"
     ],
     "ingredients": [
       "Ground chicken",
@@ -361,8 +352,7 @@
     "image": "image/maple-glazed-carrots.jpg",
     "rating": 4,
     "tags": [
-      "side dish",
-      "sweet"
+      "Sweet"
     ],
     "ingredients": [
       "Carrots",
@@ -384,9 +374,8 @@
     "image": "image/chocolate-lava-cake.jpg",
     "rating": 5,
     "tags": [
-      "dessert",
-      "chocolate",
-      "baked"
+      "Dessert",
+      "Sweet"
     ],
     "ingredients": [
       "Dark chocolate",
@@ -408,9 +397,8 @@
     "image": "image/creamy-mushroom-risotto.jpg",
     "rating": 4,
     "tags": [
-      "italian",
-      "comfort",
-      "creamy"
+      "Italian",
+      "Rich"
     ],
     "ingredients": [
       "Arborio rice",
@@ -438,8 +426,8 @@
     "image": "image/lamb-rogan-josh.jpg",
     "rating": 5,
     "tags": [
-      "indian",
-      "aromatic"
+      "Indian",
+      "Rich"
     ],
     "ingredients": [
       "Lamb",
@@ -471,8 +459,8 @@
     "image": "image/butternut-squash-soup.jpg",
     "rating": 4,
     "tags": [
-      "soup",
-      "autumn"
+      "Soup",
+      "Classic"
     ],
     "ingredients": [
       "Butternut squash",
@@ -497,9 +485,8 @@
     "image": "image/fish-and-chips.jpg",
     "rating": 5,
     "tags": [
-      "british",
-      "fried",
-      "classic"
+      "Rich",
+      "Classic"
     ],
     "ingredients": [
       "White fish fillets",
@@ -525,9 +512,8 @@
     "image": "image/pumpkin-pie.jpg",
     "rating": 5,
     "tags": [
-      "dessert",
-      "autumn",
-      "spiced"
+      "Dessert",
+      "Rich"
     ],
     "ingredients": [
       "Pumpkin puree",
