@@ -190,9 +190,6 @@
             </div>
           </div>
         </div>
-        <div v-else class="flex p-8 h-full">
-          
-        </div>
       </div>
     </div>
   </div>

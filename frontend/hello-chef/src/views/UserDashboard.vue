@@ -1,3 +1,9 @@
+
+import { h } from 'vue';
+
+import { h } from 'vue';
+
+import { h } from 'vue';
 <template>
   <!DOCTYPE html>
   <html lang="en">
@@ -228,6 +234,9 @@
                   class="w-full h-48 object-cover align-middle"
                 />
               </div>
+            </div>
+            <div v-else class="font-bold text 2xl py-8">
+                <h2>Select a Recipe Please!</h2>
             </div>
             <!-- Recipe Info-->
             <div class="flex">
