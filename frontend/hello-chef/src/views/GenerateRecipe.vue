@@ -35,24 +35,6 @@
               </select>
             </div>
 
-            <div class="mb-4">
-              <label
-                for="style"
-                class="block text-gray-700 text-sm font-bold mb-2"
-                >Food Style:</label
-              >
-              <select
-                v-model="formData.style"
-                id="style"
-                class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-              >
-                <option disabled value="">Please select one</option>
-                <option v-for="style in stylesList" :key="style" :value="style">
-                  {{ style }}
-                </option>
-              </select>
-            </div>
-
             <button
               type="submit"
               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
