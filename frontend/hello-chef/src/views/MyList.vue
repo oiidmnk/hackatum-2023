@@ -137,6 +137,11 @@
                         class="p-2 bg-red-500 text-white rounded hover:bg-red-700">
                         Remove
                       </button>
+                      <button
+                          @click="orderRecipe(selectedDish.Id)"
+                          class="p-2 bg-blue-500 text-white rounded hover:bg-blue-700">
+                        Order
+                      </button>
                     </div>
                     <br />
                     <h3 class="text-lg">{{ selectedDish.Description }}</h3>
@@ -277,6 +282,28 @@ export default {
           this.error =
             "There was a problem with the fetch operation: " + error.message;
         });
+    },
+    orderRecipe(recipeId) {
+      // Method logic to handle disliking a recipe
+      // Method logic to handle liking a recipe
+      const apiUrl =
+          "http://localhost:8080/order/" + recipeId + "/" + this.userId; // Your API endpoint
+
+      fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            console.log(recipeId);
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            this.error =
+                "There was a problem with the fetch operation: " + error.message;
+          });
     },
     notLastItem(key) {
       console.log("test");
