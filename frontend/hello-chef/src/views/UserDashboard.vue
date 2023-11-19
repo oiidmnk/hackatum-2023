@@ -267,7 +267,7 @@
                     </div>
                     <!-- Extra Properties -->
                     <div
-                      class="text-right max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8"
+                    class="text-left max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8 pl-8"
                     >
                       <p>
                         Cooking Time:
@@ -290,11 +290,11 @@
                         class="icon-class"
                       />
                       <p>Tags:</p>
-                      <div class="flex flex-wrap flex-row-reverse">
+                      <div class="flex flex-wrap flex-row">
                         <span
                           v-for="(tag, index) in selectedDish.Tags"
                           :key="tag"
-                          class="text-sm text-right justify-items-start"
+                          class="text-sm text-left justify-items-start"
                         >
                           {{ tag }}
                           <span v-if="index < selectedDish.Tags.length - 1"
@@ -303,7 +303,7 @@
                         </span>
                       </div>
                       <p>Properties:</p>
-                      <div class="flex-wrap flex flex-row-reverse">
+                      <div class="flex-wrap flex flex-row">
                         <span
                           v-for="(value, key) in selectedDish.Properties"
                           :key="key"
