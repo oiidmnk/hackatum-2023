@@ -4,11 +4,25 @@
     <!--Window-->
     <div class="container flex flex-col min-h-screen min-w-full max-h-full">
       <!-- Header -->
-      <div class="container h-20 min-w-full bg-green-800">
+      <div
+        class="container h-20 min-w-full bg-green-800 flex items-center justify-between px-4"
+      >
+        <router-link to="/">
+          <img src="@/assets/hello_chef_logo.png" alt="Logo" class="h-16" />
+        </router-link>
         <nav>
-          <ul class="flex-1 text-center">
-            <li class="list-none inline-block px-5"><p>test</p></li>
-            <li class="list-none inline-block px-5"><p>test</p></li>
+          <ul class="flex">
+            <li class="px-5">
+              <router-link to="/" class="text-white">Dashboard</router-link>
+            </li>
+            <li class="px-5">
+              <router-link to="/list" class="text-white">My List</router-link>
+            </li>
+            <li class="px-5">
+              <router-link to="/generate" class="text-white"
+                >Generate Recipes</router-link
+              >
+            </li>
           </ul>
         </nav>
       </div>
@@ -266,7 +280,8 @@
                           class="text-sm"
                         >
                           {{ property
-                          }}<span v-if="index < selectedDish.Properties.length - 1"
+                          }}<span
+                            v-if="index < selectedDish.Properties.length - 1"
                             >,
                           </span>
                         </span>
