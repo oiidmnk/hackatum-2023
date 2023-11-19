@@ -2,8 +2,10 @@ package database
 
 type User struct {
 	Id               uint32
-	HardRequirements Properties        `json:"hard_requirements"`
-	Preferences      map[string]uint32 `json:"preferences"`
+	HardRequirements Properties             `json:"hard_requirements"`
+	Preferences      map[string]int         `json:"preferences"`
+	LikedMeals       map[uint32]interface{} `json:"liked_meals"`
+	DislikedMeals    map[uint32]interface{} `json:"disliked_meals"`
 }
 
 type Properties struct {
@@ -56,6 +58,8 @@ type RecipeWithProperties struct {
 	Image               string
 	Rating              uint8
 	CookingInstructions string
+	Liked               bool
+	Disliked            bool
 }
 
 type RecipeShort struct {

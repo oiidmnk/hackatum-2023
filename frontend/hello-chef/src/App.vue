@@ -4,11 +4,25 @@
     <!--Window-->
     <div class="container flex flex-col min-h-screen min-w-full max-h-full">
       <!-- Header -->
-      <div class="container h-20 min-w-full bg-green-800">
+      <div
+        class="container h-20 min-w-full bg-green-800 flex items-center justify-between px-4"
+      >
+        <router-link to="/">
+          <img src="@/assets/hello_chef_logo.png" alt="Logo" class="h-16" />
+        </router-link>
         <nav>
-          <ul class="flex-1 text-center">
-            <li class="list-none inline-block px-5"><p>test</p></li>
-            <li class="list-none inline-block px-5"><p>test</p></li>
+          <ul class="flex">
+            <li class="px-5">
+              <router-link to="/" class="text-white">Dashboard</router-link>
+            </li>
+            <li class="px-5">
+              <router-link to="/list" class="text-white">My List</router-link>
+            </li>
+            <li class="px-5">
+              <router-link to="/generate" class="text-white"
+                >Generate Recipes</router-link
+              >
+            </li>
           </ul>
         </nav>
       </div>
@@ -68,7 +82,10 @@
               </button>
             </div>
             <!--Preferences-->
-            <div class="grid grid-cols-5 gap-4 overflow-scroll" v-if="showPreferences">
+            <div
+              class="grid grid-cols-6 gap-4 overflow-scroll"
+              v-if="showPreferences"
+            >
               <button
                 v-for="(value, key) in preferences"
                 :key="key"
@@ -149,7 +166,7 @@
         <!-- List -->
         <div class="container flex-grow w-2/6 bg-green-800 p-4">
           <ul class="space-y-4">
-            <li class="" v-for="dish in filteredDishes" :key="dish.id">
+            <li class="" v-for="dish in filteredDishes" :key="dish.Id">
               <div
                 class="container min-w-full flex h-20 bg-gray-400 rounded cursor-pointer"
                 @click="selectDish(dish.Id)"
@@ -160,9 +177,37 @@
                 <div class="flex-grow flex flex-col justify-center px-2">
                   <h2 class="text-lg font-bold">{{ dish.Name }}</h2>
                   <div class="flex">
-                    <h4 v-for="tag in dish.Tags" :key="tag" class="text-sm">
-                      {{ tag }},
-                    </h4>
+                    <span
+                      v-for="(tag, index) in dish.Tags"
+                      :key="tag"
+                      class="text-sm"
+                    >
+                      {{ tag
+                      }}<span v-if="index < dish.Tags.length - 1">, </span>
+                    </span>
+                  </div>
+                  <!--CookingTime & CookingLevel-->
+                  <div class="flex space-x-2">
+                    <div class="flex items-center justify-center">
+                      <p class="mr-1">Time:</p>
+                      <!-- Iterate over the range created by the cookingTime -->
+                      <font-awesome-icon
+                        v-for="n in dish.CookingTime"
+                        :key="n"
+                        :icon="['far', 'clock']"
+                        class="icon-class"
+                      />
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <p class="mr-1">Diff:</p>
+                      <!-- Iterate over the range created by the cookingLevel -->
+                      <font-awesome-icon
+                        v-for="n in dish.CookingLevel"
+                        :key="n"
+                        :icon="['far', 'lemon']"
+                        class="icon-class"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -178,11 +223,11 @@
             <!-- Recipe Info-->
             <div class="flex">
               <div class="container flex-grow min-w-full h-full">
-                <div v-if="showDetails" class="p-8 space-x-4">
+                <div v-if="showDetails" class="space-x-4">
                   <div v-if="dishLoading">Loading</div>
                   <div v-else class="flex text-left">
                     <!-- General Info -->
-                    <div class="w-5/6 pr-16">
+                    <div class="w-5/6 pr-16 pl-8 py-8">
                       <h1 class="font-bold text-xl">{{ selectedDish.Name }}</h1>
                       <br />
                       <h3 class="text-lg">{{ selectedDish.Description }}</h3>
@@ -191,22 +236,56 @@
                       <br />
                       <p>{{ selectedDish.CookingInstructions }}</p>
                       <br />
-                      <h3>Properties: {{ selectedDish.Properties }}</h3>
-                      <br />
-                      <h3>Tags: {{ selectedDish.Tags }}</h3>
-                      <br /><br />
                     </div>
                     <!-- Extra Properties -->
-                    <div class="text-right flex-grow">
+                    <div class="text-right flex-grow bg-green-200 pr-8 py-8">
                       <p>
                         Cooking Time:
                         {{ selectedDish.RecipeProperties.cooking_time }}
                       </p>
-                      <p>Region: {{ selectedDish.RecipeProperties.region }}</p>
+                      <font-awesome-icon
+                        v-for="n in selectedDish.RecipeProperties.cooking_time"
+                        :key="n"
+                        :icon="['far', 'clock']"
+                        class="icon-class"
+                      />
                       <p>
                         Cooking Level:
                         {{ selectedDish.RecipeProperties.cooking_level }}
                       </p>
+                      <font-awesome-icon
+                        v-for="n in selectedDish.RecipeProperties.cooking_level"
+                        :key="n"
+                        :icon="['far', 'lemon']"
+                        class="icon-class"
+                      />
+                      <div class="flex">
+                        Tags:
+                        <span
+                          v-for="(tag, index) in selectedDish.Tags"
+                          :key="tag"
+                          class="text-sm"
+                        >
+                          {{ tag
+                          }}<span v-if="index < selectedDish.Tags.length - 1"
+                            >,
+                          </span>
+                        </span>
+                      </div>
+                      <div class="flex">
+                        Properties:
+                        <span
+                          v-for="(property, index) in selectedDish.Properties"
+                          :key="property"
+                          class="text-sm"
+                        >
+                          {{ property
+                          }}<span
+                            v-if="index < selectedDish.Properties.length - 1"
+                            >,
+                          </span>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
