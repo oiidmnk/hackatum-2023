@@ -145,14 +145,14 @@
           <ul class="space-y-4">
             <li class="" v-for="dish in filteredDishes" :key="dish.Id">
               <div
-                class="container min-w-full flex h-20 bg-gray-400 rounded cursor-pointer"
+                class="container min-w-full flex h-24 bg-gray-400 rounded cursor-pointer"
                 @click="selectDish(dish.Id)"
               >
-                <div class="w-20 h-20">
+                <div class="w-24">
                   <img
                     :src="getImageSrc(dish.Image)"
                     alt="Dish Image"
-                    class="w-full h-full object-cover"
+                    class="w-24 h-full object-cover"
                   />
                 </div>
                 <div class="flex-grow flex flex-col justify-center px-2">
@@ -189,6 +189,20 @@
                         class="icon-class"
                       />
                     </div>
+                    <!--Special Icons-->
+                    <div class="flex items-center justify-center">
+                      <!-- Iterate over the range of specialTags -->
+                      <div
+                        v-for="specialIcon in dish.IconTags"
+                        :key="specialIcon"
+                      >
+                        <font-awesome-icon
+                          :icon="getIcon(specialIcon).name"
+                          :style="{ color: getIcon(specialIcon).color }"
+                          class="icon-class"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -200,9 +214,18 @@
           <!-- Divs between picture and info-->
           <div class="container flex flex-col flex-grow min-w-full">
             <!-- Image -->
-            <div v-if="showDetails" class="container h-40 bg-gray-400 min-w-full">
-                <div v-if="dishLoading">Loading...</div>
-                <div v-else><img :src="getImageSrc(selectedDish.Image)" alt="Dish Image" class="w-full h-40 object-cover align-middle" /></div>
+            <div
+              v-if="showDetails"
+              class="container h-48 bg-gray-400 min-w-full"
+            >
+              <div v-if="dishLoading">Loading...</div>
+              <div v-else>
+                <img
+                  :src="getImageSrc(selectedDish.Image)"
+                  alt="Dish Image"
+                  class="w-full h-48 object-cover align-middle"
+                />
+              </div>
             </div>
             <!-- Recipe Info-->
             <div class="flex">
@@ -222,7 +245,9 @@
                       <br />
                     </div>
                     <!-- Extra Properties -->
-                    <div class="text-right max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8">
+                    <div
+                      class="text-right max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8"
+                    >
                       <p>
                         Cooking Time:
                         {{ selectedDish.RecipeProperties.cooking_time }}
@@ -249,10 +274,11 @@
                           v-for="(tag, index) in selectedDish.Tags"
                           :key="tag"
                           class="text-sm text-right justify-items-start"
-                        > 
-                          {{ tag
-                          }} <span v-if="index < selectedDish.Tags.length - 1"
-                            >, </span>
+                        >
+                          {{ tag }}
+                          <span v-if="index < selectedDish.Tags.length - 1"
+                            >,
+                          </span>
                         </span>
                       </div>
                       <p>Properties:</p>
@@ -342,9 +368,31 @@ export default {
     }
   },
   methods: {
+    getIcon(specialIcon) {
+      const icons = {
+        Spicy: {
+          name: ["fas", "pepper-hot"],
+          color: "#d40c0c",
+        },
+        "Gluten free": {
+          // Assuming 'wheat-awn' is a placeholder for the actual icon you have
+          name: ['fas', 'wheat-awn'],
+          color: '#e3e656',
+        },
+        Vegan: {
+          name: ["fas", "seedling"],
+          color: "#215428",
+        },
+        Vegetarian: {
+          name: ["fas", "carrot"],
+          color: "#215428",
+        },
+      };
+      return icons[specialIcon] || {};
+    },
     notLastItem(key) {
-        console.log("test");
-        console.log(this.selectDish.Properties);
+      console.log("test");
+      console.log(this.selectDish.Properties);
       const keys = Object.keys(this.selectedDish.Properties).filter(
         (k) => this.selectedDish.Properties[k]
       );
