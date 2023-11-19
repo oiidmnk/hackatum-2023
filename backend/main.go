@@ -29,9 +29,9 @@ func main() {
 	utils.OpenAndUnmarshal("database/recipes.json", any(&recipesTemp))
 	utils.AssignIdRecipes(recipesTemp)
 	recipes = utils.RecipesToRecipesWithProperties(recipesTemp, ingredients)
+	tags = utils.GetTags(recipes)
 	utils.SetUserPreferences(users, tags)
 	utils.AddIconTagsToRecipes(recipes)
-	tags = utils.GetTags(recipes)
 
 	router := gin.Default()
 	router.Use(CORSMiddleware())
@@ -41,8 +41,10 @@ func main() {
 	router.GET("/image/:path", getImage)
 	router.GET("/user/:id", getUser)
 	router.GET("/user", getNewUserId)
+	router.GET("/liked/:userId", getLikedMeals)
 	router.GET("/like/:recipeId/:userId", likeMeal)
 	router.GET("/dislike/:recipeId/:userId", dislikeMeal)
+	router.GET("/order/:recipeId/:userId", orderMeal)
 	router.PUT("/user/:id/preferences", updateUserPreferences)
 	router.PUT("/user/:id/requirements", updateUserRequirements)
 	log.Fatal(router.Run(":8080"))
@@ -122,10 +124,27 @@ func getNewUserId(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, id)
 }
 
+func getLikedMeals(ctx *gin.Context) {
+	id, _ := strconv.ParseInt(ctx.Param("userId"), 10, 32)
+	if int(id) >= len(users) {
+		ctx.JSON(http.StatusNotFound, nil)
+		return
+	}
+	likedMeals := make([]*database.RecipeWithProperties, 0)
+	for i := range users[id].LikedMeals {
+		likedMeals = append(likedMeals, recipes[i])
+	}
+	likedMealsShort := utils.ConvertRecipesToShortRecipes(likedMeals)
+	ctx.JSON(http.StatusOK, likedMealsShort)
+}
+
 func likeMeal(ctx *gin.Context) {
 	recipeId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
-	userId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
+	userId, _ := strconv.ParseInt(ctx.Param("userId"), 10, 32)
 	if _, ok := users[userId].LikedMeals[uint32(recipeId)]; !ok {
+		if users[userId].LikedMeals == nil {
+			users[userId].LikedMeals = make(map[uint32]interface{})
+		}
 		users[userId].LikedMeals[uint32(recipeId)] = struct{}{}
 		utils.AddPreferenceValue(users[userId], recipes[recipeId].Tags, 20)
 	} else {
@@ -136,13 +155,28 @@ func likeMeal(ctx *gin.Context) {
 
 func dislikeMeal(ctx *gin.Context) {
 	recipeId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
-	userId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
+	userId, _ := strconv.ParseInt(ctx.Param("userId"), 10, 32)
 	if _, ok := users[userId].DislikedMeals[uint32(recipeId)]; !ok {
+		if users[userId].DislikedMeals == nil {
+			users[userId].DislikedMeals = make(map[uint32]interface{})
+		}
 		users[userId].DislikedMeals[uint32(recipeId)] = struct{}{}
 		utils.AddPreferenceValue(users[userId], recipes[recipeId].Tags, -20)
 	} else {
 		delete(users[userId].DislikedMeals, uint32(recipeId))
 		utils.AddPreferenceValue(users[userId], recipes[recipeId].Tags, 20)
+	}
+}
+
+func orderMeal(ctx *gin.Context) {
+	recipeId, _ := strconv.ParseInt(ctx.Param("recipeId"), 10, 32)
+	userId, _ := strconv.ParseInt(ctx.Param("userId"), 10, 32)
+	if _, ok := users[userId].LikedMeals[uint32(recipeId)]; !ok {
+		if users[userId].LikedMeals == nil {
+			users[userId].LikedMeals = make(map[uint32]interface{})
+		}
+		users[userId].LikedMeals[uint32(recipeId)] = struct{}{}
+		utils.AddPreferenceValue(users[userId], recipes[recipeId].Tags, 15)
 	}
 }
 
