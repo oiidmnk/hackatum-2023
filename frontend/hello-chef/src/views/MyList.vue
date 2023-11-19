@@ -96,13 +96,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
       <!-- Container for all Dish related Details -->
       <div class="container flex flex-grow min-w-full">
         <!-- List -->
@@ -165,9 +158,18 @@
           <!-- Divs between picture and info-->
           <div class="container flex flex-col flex-grow min-w-full">
             <!-- Image -->
-            <div v-if="showDetails" class="container h-40 bg-gray-400 min-w-full">
-                <div v-if="dishLoading">Loading...</div>
-                <div v-else><img :src="getImageSrc(selectedDish.Image)" alt="Dish Image" class="w-full h-40 object-cover align-middle" /></div>
+            <div
+              v-if="showDetails"
+              class="container h-40 bg-gray-400 min-w-full"
+            >
+              <div v-if="dishLoading">Loading...</div>
+              <div v-else>
+                <img
+                  :src="getImageSrc(selectedDish.Image)"
+                  alt="Dish Image"
+                  class="w-full h-40 object-cover align-middle"
+                />
+              </div>
             </div>
             <!-- Recipe Info-->
             <div class="flex">
@@ -187,7 +189,9 @@
                       <br />
                     </div>
                     <!-- Extra Properties -->
-                    <div class="text-right max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8">
+                    <div
+                      class="text-right max-w-xs flex-grow flex-wrap bg-green-200 pr-8 py-8"
+                    >
                       <p>
                         Cooking Time:
                         {{ selectedDish.RecipeProperties.cooking_time }}
@@ -214,10 +218,11 @@
                           v-for="(tag, index) in selectedDish.Tags"
                           :key="tag"
                           class="text-sm text-right justify-items-start"
-                        > 
-                          {{ tag
-                          }} <span v-if="index < selectedDish.Tags.length - 1"
-                            >, </span>
+                        >
+                          {{ tag }}
+                          <span v-if="index < selectedDish.Tags.length - 1"
+                            >,
+                          </span>
                         </span>
                       </div>
                       <p>Properties:</p>
@@ -308,8 +313,8 @@ export default {
   },
   methods: {
     notLastItem(key) {
-        console.log("test");
-        console.log(this.selectDish.Properties);
+      console.log("test");
+      console.log(this.selectDish.Properties);
       const keys = Object.keys(this.selectedDish.Properties).filter(
         (k) => this.selectedDish.Properties[k]
       );

@@ -106,6 +106,7 @@ export default {
         })
         .then((data) => {
           console.log(data);
+          this.promptResponse = data;
           // Handle the response here, e.g., display the generated recipe
         })
         .catch((error) => {
@@ -115,7 +116,14 @@ export default {
   },
 };
 </script>
-  
+export default { 
+    data() {
+        return {
+          promptResponse: "",
+        };
+      },
+}
+
   <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
